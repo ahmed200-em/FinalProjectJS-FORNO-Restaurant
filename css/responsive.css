@@ -1,26 +1,97 @@
 @media (max-width: 768px) {
-    .header-div{
-        padding: 0.5rem 0 1rem 0;
-    }
-    .nav {
-        display: none;
-    }
+  .header-div {
+    padding: 0.5rem 0 1rem 0;
+  }
+  .nav {
+    display: none;
+  }
+  #burgerBag {
+    position: relative;
+    display: flex;
+    height: 100%;
+    stroke-width: 1px;
+    width: 1.5rem;
+  }
+  #burgerBag-count {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background-color: var(--red);
+    color: white;
+    font-weight: 200;
+    font-size: 0.7rem;
+  }
 
-    .burger {
-        display: flex;
-
-    }
-    .burger-menu{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100%;
-    }
-    .burger-menu span{
-        width: 30px;
-        height: 6px;
-        background-color: rgb(23, 21, 21);
-        margin: 1px;
-        border-radius: 0.13rem;
-    }
+  .burger {
+    display: flex;
+    gap: 1rem;
+  }
+  .burger-menu {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .burger-menu span {
+    width: 30px;
+    height: 6px;
+    background-color: rgb(23, 21, 21);
+    margin: 1px;
+    border-radius: 0.13rem;
+  }
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-subtitle {
+    font-size: 0.4rem;
+  }
+  .hero-text h1 {
+    font-size: 4rem;
+  }
+  .hero-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .hero-cta {
+    left: 3rem;
+    top: 56rem;
+    rotate: -35deg;
+    width: 20%;
+    height: 5rem;
+  }
+  .hero-cta-text {
+    width: 90%;
+    height: 90%;
+  }
+  .hero-cta-text span {
+    font-weight: 300;
+    font-size: 0.4rem;
+  }
+  .hero-cta-text h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+  .hero-cta-image {
+    top: 42rem;
+    right: 2rem;
+    width: 8rem;
+    height: 1.4rem;
+  }
+  .hero-cta-image p {
+    font-size: 0.5rem;
+  }
+  .hero-cta-date {
+    top: 61rem;
+    right: 2rem;
+    font-weight: 600;
+    font-size: 0.7rem;
+  }
 }
