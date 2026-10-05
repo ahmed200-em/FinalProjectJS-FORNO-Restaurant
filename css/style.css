@@ -46,62 +46,91 @@ img {
   height: auto;
 }
 .header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid var(--line);
+    position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
 }
 .header-div {
-    width: 85%;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 0 2rem 0;
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 2rem 0;
 }
 .logo span {
-    font-weight: 800;
-    font-size: 2rem;
-    color: var(--red);
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--red);
 }
 .logo .logo-subtitle {
-    font-weight: 600;
-    font-size: 0.66rem;
-    color: var(--muted);
+  font-weight: 600;
+  font-size: 0.66rem;
+  color: var(--muted);
+}
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
 }
 .nav {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
-.nav-list{
-    display: flex;
-    gap: 1.8rem;
+.nav-list {
+  display: flex;
+  gap: 1.8rem;
 }
 .nav-list li {
-    list-style: none;
+  list-style: none;
 }
 .nav-list a {
-    text-decoration: none;
-    color: var(--ink);
-    font-weight: 600;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
 }
-.cart{
-    display: flex;
-    gap: 0.5rem;
-    border: 1px solid var(--line);
-    padding: 0.7rem 0.8rem;
-    border-radius: 0.5rem;
+.cart {
+  display: flex;
+  gap: 0.5rem;
+  border: 1px solid var(--line);
+  padding: 0.7rem 0.8rem;
+  border-radius: 0.5rem;
 }
 .cart a {
-    text-decoration: none;
-    color: var(--ink);
-    font-weight: 600;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
 }
-.cart span{
-    font-weight: 600;
-    color: white;
-    background-color: var(--red);
-    border-radius: 50%;
-    padding: 0.2rem 0.4rem;
-    font-size: 0.65rem;
+.cart span {
+  font-weight: 600;
+  color: white;
+  background-color: var(--red);
+  border-radius: 50%;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.65rem;
+}
+.burger-links-list {
+    position: absolute;
+  top: 100%;
+  right: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.burger-links-list li {
+  list-style: none;
+}
+.burger-links-list a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.burger-links-list a:hover {
+  color: var(--red);
 }
