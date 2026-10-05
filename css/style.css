@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 :root {
   --paper: #f5f1e9;
   --surface: #fffaf1;
@@ -9,12 +14,18 @@
 }
 
 body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--ink);
   background-color: var(--paper);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 800;
 }
 
@@ -24,11 +35,73 @@ em {
   font-weight: 400;
 }
 
-button, input, textarea {
+button,
+input,
+textarea {
   font: inherit;
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+}
+.header-div {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0 2rem 0;
+}
+.logo span {
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--red);
+}
+.logo .logo-subtitle {
+    font-weight: 600;
+    font-size: 0.66rem;
+    color: var(--muted);
+}
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.nav-list{
+    display: flex;
+    gap: 1.8rem;
+}
+.nav-list li {
+    list-style: none;
+}
+.nav-list a {
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 600;
+}
+.cart{
+    display: flex;
+    gap: 0.5rem;
+    border: 1px solid var(--line);
+    padding: 0.7rem 0.8rem;
+    border-radius: 0.5rem;
+}
+.cart a {
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 600;
+}
+.cart span{
+    font-weight: 600;
+    color: white;
+    background-color: var(--red);
+    border-radius: 50%;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.65rem;
 }
