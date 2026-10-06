@@ -572,15 +572,15 @@ main {
   justify-content: center;
   gap: 3rem;
 }
-.about-chefs-image{
+.about-chefs-image {
   position: relative;
   /* width: 50%; */
 }
-.about-chefs-image img{
+.about-chefs-image img {
   border-radius: 1rem;
   height: 100%;
 }
-.about-chefs-image p{
+.about-chefs-image p {
   position: absolute;
   bottom: 1.7rem;
   right: 3.3rem;
@@ -619,7 +619,7 @@ main {
   line-height: 1.5;
   color: var(--red);
 }
-.about-chefs-text a{
+.about-chefs-text a {
   text-decoration: none;
   color: var(--red);
   font-weight: 600;
@@ -643,10 +643,110 @@ main {
   gap: 1rem;
   padding: 0.6rem 0;
 }
-.about-chefs-lines div{
+.about-chefs-lines div {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
 }
+/* todo horizons section styles  */
 
+.horizons-section {
+  width: 100%;
+  background-color: #24231f;
+  color: #f5f0e7;
+  padding: 3rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.horizons-container {
+  width: 85%;
+}
+.horizons-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+}
+
+.horizons-title > p {
+  color: var(--red-dark);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.horizons-title h1 {
+  font-size: 36px;
+  line-height: 1;
+  margin: 0;
+}
+
+.horizons-title h1 em {
+  color: var(--red);
+  font-weight: 400;
+}
+
+.horizons-description {
+  max-width: 200px;
+}
+
+.horizons-description p {
+  font-size: 11px;
+  line-height: 1.5;
+  color: #d2cec5;
+}
+.horizons-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.horizon-card {
+  border-top: 1px solid var(--line);
+  padding-top: 15px;
+}
+
+.horizon-number {
+  color: var(--muted);
+  font-size: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.horizon-country {
+  color: var(--red);
+  font-size: 8px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.horizon-card h2 {
+  font-size: 16px;
+  margin: 0 0 20px;
+}
+
+.horizon-card > p:not(.horizon-country) {
+  color: white;
+  font-size: 10px;
+  line-height: 1.6;
+  min-height: 48px;
+  margin-bottom: 25px;
+}
+
+.horizon-card a {
+  color: #f5f0e7;
+  font-size: 0.7rem;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+  padding-bottom: 2px;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.horizon-card a:hover {
+  color: var(--red);
+  border-bottom: 1px solid var(--red);
+}

@@ -138,4 +138,13 @@
     bottom: 1rem;
     padding: 0.5rem;
   }
+  .horizons-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .horizons-cards{
+    grid-template-columns: 1fr;
+  }
+
 }
