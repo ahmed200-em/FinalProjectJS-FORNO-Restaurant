@@ -123,4 +123,8 @@
     top: 15rem;
     right: 1rem;
   }
+  .about-container{
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
