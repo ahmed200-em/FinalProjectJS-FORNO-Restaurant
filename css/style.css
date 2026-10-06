@@ -161,6 +161,7 @@ main {
   border-bottom: 1px solid var(--line);
 }
 .hero-container {
+  position: relative;
   width: 85%;
   display: flex;
   justify-content: center;
@@ -171,7 +172,6 @@ main {
   gap: 2rem;
 }
 .hero-image {
-  position: relative;
   width: 50%;
   height: 100%;
   display: flex;
@@ -241,17 +241,17 @@ main {
 }
 .hero-cta {
   position: absolute;
-  right: 30rem;
-  top: 33rem;
-  rotate: -35deg;
+  right: 25rem;
+  bottom: 4rem;
+  rotate: -32deg;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   background-color: white;
-  width: 10%;
-  height: 8rem;
+  width: 13%;
+  height: 9rem;
   border-radius: 50%;
   border: 2px solid var(--red);
   color: white;
@@ -268,17 +268,17 @@ main {
 }
 .hero-cta-text span {
   font-weight: 600;
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   color: white;
 }
 .hero-cta-text h1 {
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 800;
 }
 .hero-cta-image {
   position: absolute;
-  top: 13rem;
-  right: 5rem;
+  top: 3rem;
+  right: 2rem;
   background-color: var(--paper);
   width: 11rem;
   height: 1.4rem;
@@ -294,8 +294,8 @@ main {
 }
 .hero-cta-date {
   position: absolute;
-  top: 40.5rem;
-  right: 6rem;
+  bottom: 3.5rem;
+  right: 0rem;
   font-weight: 600;
   font-size: 1rem;
   color: var(--muted);
@@ -749,4 +749,117 @@ main {
 .horizon-card a:hover {
   color: var(--red);
   border-bottom: 1px solid var(--red);
+}
+/* ! this is the footer section styles   */
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--surface);
+  color: black;
+  padding: 3.5rem 0 1.25rem;
+}
+
+.footer-container {
+  width: 85%;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 3.75rem;
+}
+
+.footer-slogan h1 {
+  font-size: 1.6rem;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.footer-slogan h1 em {
+  color: var(--red);
+  font-family: serif;
+  font-weight: 600;
+}
+
+.footer-top-link {
+  padding-top: 0.6rem;
+}
+
+.footer-top-link a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.8rem;
+  border: 1px solid var(--ink);
+  padding: 0.6rem;
+  border-radius: 0.2rem;
+}
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1.2fr;
+  gap: 3.1rem;
+  padding-bottom: 3.1rem;
+}
+.footer-logo h1 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin: 0 0 0.9rem;
+  font-weight: 800;
+}
+.footer-logo h1 span {
+  color: var(--red);
+}
+.footer-logo p {
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.footer-columns {
+  display: flex;
+  justify-content:center;
+  justify-content: space-between;
+  width: 90%;
+}
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+.footer-column h3 {
+  font-size: 0.85rem;
+  margin: 0 0 0.9rem;
+}
+.footer-column a {
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-decoration: none;
+  margin-bottom: 0.55rem;
+  transition: color 0.3s ease;
+}
+.footer-column a:hover {
+  color: var(--red);
+}
+.footer-column p {
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  margin: 0 0 0.75rem;
+}
+.footer-column .footer-contact {
+  color: var(--red);
+}
+.footer-bottom {
+  border-top: 1px solid var(--line);
+  padding-top: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.footer-bottom p {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin: 0;
 }

@@ -61,11 +61,10 @@
     justify-content: center;
   }
   .hero-cta {
-    left: 3rem;
-    top: 56rem;
-    rotate: -35deg;
-    width: 20%;
-    height: 5rem;
+    left: 0.5rem;
+    bottom: 3rem;
+    width: 30%;
+    height: 6rem;
   }
   .hero-cta-text {
     width: 90%;
@@ -73,15 +72,15 @@
   }
   .hero-cta-text span {
     font-weight: 300;
-    font-size: 0.4rem;
+    font-size: 0.5rem;
   }
   .hero-cta-text h1 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 400;
   }
   .hero-cta-image {
-    top: 42rem;
-    right: 2rem;
+    top: 38rem;
+    right: 0rem;
     width: 8rem;
     height: 1.4rem;
   }
@@ -89,8 +88,8 @@
     font-size: 0.5rem;
   }
   .hero-cta-date {
-    top: 61rem;
-    right: 2rem;
+    bottom: 3rem;
+    right: 0.5rem;
     font-weight: 600;
     font-size: 0.7rem;
   }
@@ -145,6 +144,16 @@
   }
   .horizons-cards{
     grid-template-columns: 1fr;
+  }
+  .footer-top {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom{
+    flex-direction: column;
   }
 
 }
