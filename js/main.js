@@ -4,7 +4,7 @@ let linkList = document.createElement("ul");
 linkList.className = "burger-links-list";
 linkList.innerHTML = `
     <li><a href="index.html">Accueil</a></li>
-    <li><a href="menu.html">Menu</a></li>
+    <li><a href="#cartSection">Menu</a></li>
     <li><a href="contact.html">Contact</a></li>
 `;
 
