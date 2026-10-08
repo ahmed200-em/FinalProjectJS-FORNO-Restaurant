@@ -144,6 +144,7 @@
               <input
                 type="search"
                 placeholder="Quelle pizza vous fait envie?"
+                id="searchInput"
               />
             </div>
             <select name="" id="" class="filter-bar">
@@ -155,7 +156,9 @@
             </select>
           </div>
           <div class="filter-result">
-            <p><span>6</span> pizzas a decouvrir</p>
+            <p>
+              <span class="filter-result-number">6</span> pizzas a decouvrir
+            </p>
           </div>
           <div class="cards">
             <div class="card">
@@ -221,7 +224,7 @@
                 <span class="image-badge-number">04</span>
               </div>
               <div class="card-text">
-                <p class="card-text-subtitle">VEGETARIENNES</p>
+                <p class="card-text-subtitle">VÉGÉTARIENNES</p>
                 <h1 class="card-text-title">Giardino</h1>
                 <p class="card-ingredients">
                   Sauce tomate, poivrons, champignons & olives.
@@ -366,7 +369,7 @@
                 Notre ancrage marocain, une table généreuse et une envie de
                 partager.
               </p>
-              <a href="">Contacter cette maison</a>
+              <a href="contact.html#contactSection">Contacter cette maison</a>
             </div>
             <div class="horizon-card">
               <div class="horizon-number">02 / 04</div>
@@ -375,21 +378,21 @@
               <p>
                 La convivialité belge rencontre notre passion pour la pizza.
               </p>
-              <a href="">Contacter cette maison</a>
+              <a href="contact.html#contactSection">Contacter cette maison</a>
             </div>
             <div class="horizon-card">
               <div class="horizon-number">03 / 04</div>
               <p class="horizon-country">EUROPE</p>
               <h2>France</h2>
               <p>De belles choses, autour d'une pizza bien faite.</p>
-              <a href="">Contacter cette maison</a>
+              <a href="contact.html#contactSection">Contacter cette maison</a>
             </div>
             <div class="horizon-card">
               <div class="horizon-number">04 / 04</div>
               <p class="horizon-country">MOYEN-ORIENT</p>
               <h2>Émirats arabes unis</h2>
               <p>Une cuisine ouverte sur le monde, pour toutes les envies.</p>
-              <a href="">Contacter cette maison</a>
+              <a href="contact.html#contactSection">Contacter cette maison</a>
             </div>
           </div>
         </div>
@@ -420,23 +423,23 @@
           <div class="footer-columns">
             <div class="footer-column">
               <h3>La maison</h3>
-              <a href="">À propos</a>
-              <a href="">Notre carte</a>
-              <a href="">À propos de nous</a>
-              <a href="">Contactez-nous</a>
+              <a href="about.html">À propos</a>
+              <a href="menu.html">Notre carte</a>
+              <a href="about.html#aboutSection">À propos de nous</a>
+              <a href="contact.html">Contactez-nous</a>
             </div>
             <div class="footer-column">
               <h3>Nos horizons</h3>
-              <a href="">Casablanca</a>
-              <a href="">Belgique</a>
-              <a href="">France</a>
-              <a href="">Émirats arabes unis</a>
+              <a href="contact.html#contactSection">Casablanca</a>
+              <a href="contact.html#contactSection">Belgique</a>
+              <a href="contact.html#contactSection">France</a>
+              <a href="contact.html#contactSection">Émirats arabes unis</a>
             </div>
           </div>
           <div class="footer-column">
             <h3>On se retrouve ?</h3>
             <p>Une question, une grande table ou une occasion à célébrer ?</p>
-            <a href="" class="footer-contact">Parlons-en</a>
+            <a href="contact.html#contactSection" class="footer-contact">Parlons-en</a>
           </div>
         </div>
         <div class="footer-bottom">
@@ -445,6 +448,24 @@
         </div>
       </div>
     </footer>
+    <!-- ! side bar for panel  -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="cart-drawer-header">
+        <h2>Votre <em>Panier</em></h2>
+        <button id="closeCartBtn" class="close-btn">&times;</button>
+      </div>
+      <div class="cart-drawer-items" id="cartItemsContainer">
+        <p class="empty-msg">Votre panier est vide pour le moment.</p>
+      </div>
+      <div class="cart-drawer-footer">
+        <div class="cart-drawer-total">
+          <span>Total</span>
+          <p><span id="cartTotalPrice">0</span> MAD</p>
+        </div>
+        <button class="checkout-btn">Commander</button>
+      </div>
+    </aside>
     <!-- Scripts -->
     <script src="js/particles.js" defer></script>
     <script src="js/animations.js" defer></script>

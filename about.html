@@ -108,7 +108,7 @@
               l'ouverture, dans la table où l'on se retrouve, une bonne pâte,
               une garniture généreuse et le plaisir de partager.
             </p>
-            <button>Découvrir nos pizzas</button>
+            <button href="index.html#cartSection">Découvrir nos pizzas</button>
           </div>
         </div>
       </section>
@@ -299,6 +299,24 @@
         </div>
       </div>
     </footer>
+    <!-- ! side bar for panel  -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="cart-drawer-header">
+        <h2>Votre <em>Panier</em></h2>
+        <button id="closeCartBtn" class="close-btn">&times;</button>
+      </div>
+      <div class="cart-drawer-items" id="cartItemsContainer">
+        <p class="empty-msg">Votre panier est vide pour le moment.</p>
+      </div>
+      <div class="cart-drawer-footer">
+        <div class="cart-drawer-total">
+          <span>Total</span>
+          <p><span id="cartTotalPrice">0</span> MAD</p>
+        </div>
+        <button class="checkout-btn">Commander</button>
+      </div>
+    </aside>
     <!-- Scripts -->
     <script src="js/particles.js" defer></script>
     <script src="js/animations.js" defer></script>
