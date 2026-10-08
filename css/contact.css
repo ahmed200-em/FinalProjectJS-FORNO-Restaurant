@@ -247,7 +247,7 @@
 .radio-options {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap; /* Allows wrap on smaller screens */
+  flex-wrap: wrap; 
 }
 
 .radio-label {
