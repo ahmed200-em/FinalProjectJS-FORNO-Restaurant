@@ -85,7 +85,7 @@
               Une pate dorree, des ingredients genereux et ce <br />
               petit gout qui donne envie de reprendre une part
             </p>
-            <button>Je choisis ma pizza</button>
+            <a href="index.html#cartSection">Je choisis ma pizza</a>
             <div class="hero-recipes">
               <span>6</span>
               <p>
@@ -369,7 +369,7 @@
                 Notre ancrage marocain, une table généreuse et une envie de
                 partager.
               </p>
-              <a href="contact.html#contactSection">Contacter cette maison</a>
+              <a href="contact.html?city=Casablanca#contactSection">Contacter cette maison</a>
             </div>
             <div class="horizon-card">
               <div class="horizon-number">02 / 04</div>
@@ -378,21 +378,21 @@
               <p>
                 La convivialité belge rencontre notre passion pour la pizza.
               </p>
-              <a href="contact.html#contactSection">Contacter cette maison</a>
+              <a href="contact.html?city=Belgique#contactSection">Contacter cette maison</a>
             </div>
             <div class="horizon-card">
               <div class="horizon-number">03 / 04</div>
               <p class="horizon-country">EUROPE</p>
               <h2>France</h2>
               <p>De belles choses, autour d'une pizza bien faite.</p>
-              <a href="contact.html#contactSection">Contacter cette maison</a>
+              <a href="contact.html?city=France#contactSection">Contacter cette maison</a>
             </div>
             <div class="horizon-card">
               <div class="horizon-number">04 / 04</div>
               <p class="horizon-country">MOYEN-ORIENT</p>
               <h2>Émirats arabes unis</h2>
               <p>Une cuisine ouverte sur le monde, pour toutes les envies.</p>
-              <a href="contact.html#contactSection">Contacter cette maison</a>
+              <a href="contact.html?city=Emirats#contactSection">Contacter cette maison</a>
             </div>
           </div>
         </div>
@@ -439,7 +439,9 @@
           <div class="footer-column">
             <h3>On se retrouve ?</h3>
             <p>Une question, une grande table ou une occasion à célébrer ?</p>
-            <a href="contact.html#contactSection" class="footer-contact">Parlons-en</a>
+            <a href="contact.html#contactSection" class="footer-contact"
+              >Parlons-en</a
+            >
           </div>
         </div>
         <div class="footer-bottom">
@@ -452,18 +454,26 @@
     <div class="cart-overlay" id="cartOverlay"></div>
     <aside class="cart-drawer" id="cartDrawer">
       <div class="cart-drawer-header">
-        <h2>Votre <em>Panier</em></h2>
+        <div class="cart-drawer-title">
+          <p>UNE ENVIE PREND FORM</p>
+          <h2>Mon Panier<span>.</span></h2>
+        </div>
         <button id="closeCartBtn" class="close-btn">&times;</button>
       </div>
       <div class="cart-drawer-items" id="cartItemsContainer">
-        <p class="empty-msg">Votre panier est vide pour le moment.</p>
+        <em>Une part?</em>
+        <h4>Votre panier attend sa pizza</h4>
+        <p class="empty-msg">
+          Choisissez votre recette et laissez la <br />
+          gourmande faire le reste.
+        </p>
       </div>
       <div class="cart-drawer-footer">
         <div class="cart-drawer-total">
           <span>Total</span>
           <p><span id="cartTotalPrice">0</span> MAD</p>
         </div>
-        <button class="checkout-btn">Commander</button>
+        <a class="checkout-btn" href="index.html#cartSection">Decouvrir la carte</a>
       </div>
     </aside>
     <!-- Scripts -->

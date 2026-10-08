@@ -14,13 +14,14 @@ let cartTotalPrice = document.querySelector("#cartTotalPrice");
 let navCartCount = document.querySelector(".panier span");
 let burgerCartCount = document.querySelector("#burgerBag-count");
 let addButtons = document.querySelectorAll(".price button");
+let checkoutBtn = document.querySelector(".checkout-btn");
 
 let cart = [];
 
 function updateFilterResultNumber() {
   let cards = document.querySelectorAll(".card");
   let visibleCards = Array.from(cards).filter(
-    (card) => card.style.display !== "none"
+    (card) => card.style.display !== "none",
   );
   if (filterResultNumber) {
     filterResultNumber.textContent = visibleCards.length;
@@ -33,8 +34,12 @@ function applyFilters() {
   let cards = document.querySelectorAll(".card");
 
   cards.forEach(function (card) {
-    let title = card.querySelector(".card-text-title").textContent.toLowerCase();
-    let category = card.querySelector(".card-text-subtitle").textContent.toLowerCase();
+    let title = card
+      .querySelector(".card-text-title")
+      .textContent.toLowerCase();
+    let category = card
+      .querySelector(".card-text-subtitle")
+      .textContent.toLowerCase();
 
     let matchesSearch = title.includes(searchValue);
     let matchesCategory = filterValue === "" || category.includes(filterValue);
@@ -101,11 +106,23 @@ if (cartOverlay && cartDrawer) {
 
 function renderCart() {
   if (!cartItemsContainer) return;
+  if (cart.length > 0) {
+    cartItemsContainer.classList.add("active");
+  } else {
+    cartItemsContainer.classList.remove("active");
+  }
 
   cartItemsContainer.innerHTML = "";
 
   if (cart.length === 0) {
-    cartItemsContainer.innerHTML = `<p class="empty-msg">Votre panier est vide pour le moment.</p>`;
+    cartItemsContainer.innerHTML = `
+      <em>Une part?</em>
+      <h4>Votre panier attend sa pizza</h4>
+      <p class="empty-msg">
+        Choisissez votre recette et laissez la <br />
+        gourmande faire le reste.
+      </p>
+    `;
     if (cartTotalPrice) cartTotalPrice.textContent = "0";
     if (navCartCount) navCartCount.textContent = "0";
     if (burgerCartCount) burgerCartCount.textContent = "0";
@@ -134,7 +151,7 @@ function renderCart() {
       </div>
       <button class="remove-btn" data-index="${index}">&times;</button>
     `;
-
+    checkoutBtn.textContent = `Commander (${totalItems})`;
     cartItemsContainer.appendChild(itemDiv);
   });
 
@@ -173,13 +190,25 @@ function renderCart() {
     });
   });
 }
-
+if (checkoutBtn) {
+  checkoutBtn.addEventListener("click", function (e) {
+    if (cart.length === 0) {
+      if (cartDrawer) cartDrawer.classList.remove("active");
+      if (cartOverlay) cartOverlay.classList.remove("active");
+    } else {
+      e.preventDefault();
+      alert("Merci pour votre commande !");
+    }
+  });
+}
 if (addButtons) {
   addButtons.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
       let card = e.target.closest(".card");
       let name = card.querySelector(".card-text-title").textContent.trim();
-      let price = parseFloat(card.querySelector(".price span").textContent.trim());
+      let price = parseFloat(
+        card.querySelector(".price span").textContent.trim(),
+      );
       let imgSrc = card.querySelector(".card-image img").getAttribute("src");
 
       let found = false;
@@ -200,7 +229,72 @@ if (addButtons) {
       }
 
       renderCart();
-
     });
+  });
+}
+let citySelect = document.querySelector("#citySelect");
+if (citySelect) {
+  let urlParams = new URLSearchParams(window.location.search);
+  let selectedCity = urlParams.get("city");
+
+  if (selectedCity) {
+    citySelect.value = selectedCity;
+  }
+}
+let Name = document.querySelector("#name");
+let Email = document.querySelector("#email");
+let Message = document.querySelector("#message");
+let contactForm = document.querySelector("#contactForm");
+let submitedFormResult = document.querySelector(".submited-form-result");
+let formCard = document.querySelector(".contact-form-card");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    let Subject = document.querySelector('input[name="subject"]:checked');
+
+    if (Name && Email && Message) {
+      console.log("Name:", Name.value);
+      console.log("Email:", Email.value);
+      console.log("Message:", Message.value);
+      console.log("Subject:", Subject ? Subject.value : "None selected");
+
+      if (formCard && submitedFormResult) {
+        formCard.style.display = "none";
+        submitedFormResult.style.display = "block";
+        submitedFormResult.innerHTML = `
+          <h2 class="result-title">Merci, ${Name.value}<em> !</em> </h2>
+          <p class="result-subtitle">Votre message a été transmis avec succès.</p>
+
+          <div class="result-details">
+            <div class="detail-item">
+              <span class="detail-label">VILLE DE RÉSIDENCE</span>
+              <p class="detail-value">${citySelect.value}</p>
+            </div>
+
+            <div class="detail-item">
+              <span class="detail-label">SUJET</span>
+              <p class="detail-value">${Subject ? Subject.value : "None selected"}</p>
+            </div>
+
+            <div class="detail-item">
+              <span class="detail-label">E-MAIL</span>
+              <p class="detail-value">${Email.value}</p>
+            </div>
+
+            <div class="detail-item">
+              <span class="detail-label">MESSAGE</span>
+              <p class="detail-value">${Message.value}</p>
+            </div>
+          </div>
+
+          <p class="result-footer-text">
+            Nous avons bien reçu votre message. Cette confirmation valide que le formulaire a été soumis.
+          </p>
+
+          <button id="resetFormBtn" class="btn-submit">Écrire un autre message</button>
+        `;
+      }
+    }
   });
 }

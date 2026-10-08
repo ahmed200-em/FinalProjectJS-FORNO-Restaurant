@@ -108,7 +108,7 @@
               l'ouverture, dans la table où l'on se retrouve, une bonne pâte,
               une garniture généreuse et le plaisir de partager.
             </p>
-            <button href="index.html#cartSection">Découvrir nos pizzas</button>
+            <a href="index.html#cartSection">Découvrir nos pizzas</a>
           </div>
         </div>
       </section>
@@ -303,18 +303,28 @@
     <div class="cart-overlay" id="cartOverlay"></div>
     <aside class="cart-drawer" id="cartDrawer">
       <div class="cart-drawer-header">
-        <h2>Votre <em>Panier</em></h2>
+        <div class="cart-drawer-title">
+          <p>UNE ENVIE PREND FORM</p>
+          <h2>Mon Panier<span>.</span></h2>
+        </div>
         <button id="closeCartBtn" class="close-btn">&times;</button>
       </div>
       <div class="cart-drawer-items" id="cartItemsContainer">
-        <p class="empty-msg">Votre panier est vide pour le moment.</p>
+        <em>Une part?</em>
+        <h4>Votre panier attend sa pizza</h4>
+        <p class="empty-msg">
+          Choisissez votre recette et laissez la <br />
+          gourmande faire le reste.
+        </p>
       </div>
       <div class="cart-drawer-footer">
         <div class="cart-drawer-total">
           <span>Total</span>
           <p><span id="cartTotalPrice">0</span> MAD</p>
         </div>
-        <button class="checkout-btn">Commander</button>
+        <a class="checkout-btn" href="index.html#cartSection"
+          >Decouvrir la carte</a
+        >
       </div>
     </aside>
     <!-- Scripts -->

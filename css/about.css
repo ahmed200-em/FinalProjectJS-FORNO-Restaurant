@@ -79,7 +79,7 @@
   font-size: 0.85rem;
   line-height: 1.6;
 }
-.about-story-text button {
+.about-story-text a {
   padding: 0.8rem 1.5rem;
   border-radius: 0.5rem;
   width: max-content;
@@ -89,6 +89,7 @@
   font-weight: 600;
   cursor: pointer;
   margin-top: 0.5rem;
+  text-decoration: none;
 }
 .about-image-badge {
   position: absolute;

@@ -158,14 +158,22 @@ html {
   border-bottom: 1px solid var(--line);
 }
 
-.cart-drawer-header h2 {
+.cart-drawer-title h2 {
   font-size: 1.4rem;
   color: var(--ink);
 }
-
-.cart-drawer-header em {
-  color: var(--red);
+.cart-drawer-title p {
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: var(--muted);
 }
+.cart-drawer-title span {
+  color: var(--red);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+
 
 .close-btn {
   background: none;
@@ -182,14 +190,21 @@ html {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  justify-content: center; 
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-drawer-items.active {
+  justify-content: flex-start; 
+  align-items: stretch; 
+  gap: 1.5rem;
 }
 
 .empty-msg {
   color: var(--muted);
   font-size: 0.85rem;
   text-align: center;
-  margin-top: 2rem;
   font-weight: 500;
 }
 
@@ -212,6 +227,11 @@ html {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+}
+.cart-drawer-items em {
+  color: var(--red);
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .cart-item-info h4 {
@@ -271,8 +291,7 @@ html {
   color: var(--red);
 }
 .checkout-btn {
-  width: 100%;
-  padding: 0.8rem;
+  padding: 0.8rem 6.55rem;
   background-color: var(--red);
   color: white;
   border: none;
@@ -280,6 +299,7 @@ html {
   font-weight: 600;
   font-size: 0.9rem;
   cursor: pointer;
+  text-decoration: none;
 }
 .burger-links-list {
   position: absolute;
@@ -380,7 +400,7 @@ main {
   color: var(--muted);
   line-height: 1.5;
 }
-.hero-text button {
+.hero-text a {
   padding: 0.8rem 1.5rem;
   border-radius: 0.5rem;
   width: 11rem;
@@ -390,6 +410,7 @@ main {
   font-weight: 600;
   font-size: 0.85rem;
   cursor: pointer;
+  text-decoration: none;
 }
 .hero-recipes span {
   font-weight: 800;

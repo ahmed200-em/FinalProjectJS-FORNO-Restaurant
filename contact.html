@@ -93,28 +93,28 @@
               question sur la carte : tout commence par une conversation.
             </p>
             <div class="contact-locations-list">
-              <div class="contact-location-item active">
+              <div class="contact-location-item active" data-city="Casablanca">
                 <span class="location-num">01</span>
                 <div>
                   <strong>Casablanca</strong>
                   <p>Maroc</p>
                 </div>
               </div>
-              <div class="contact-location-item">
+              <div class="contact-location-item" data-city="Belgique">
                 <span class="location-num">02</span>
                 <div>
                   <strong>Belgique</strong>
                   <p>Europe</p>
                 </div>
               </div>
-              <div class="contact-location-item">
+              <div class="contact-location-item" data-city="France">
                 <span class="location-num">03</span>
                 <div>
                   <strong>France</strong>
                   <p>Europe</p>
                 </div>
               </div>
-              <div class="contact-location-item">
+              <div class="contact-location-item" data-city="Emirats">
                 <span class="location-num">04</span>
                 <div>
                   <strong>Émirats arabes unis</strong>
@@ -127,16 +127,19 @@
               concernée.
             </p>
           </div>
+          <div class="submited-form-result">
+            <p>Votre message a été envoyé avec succès !</p>
+          </div>
           <div class="contact-form-card">
             <h2>Un petit <em>mot.</em></h2>
             <p class="form-required-note">
               Les champs marqués d'un astérisque sont obligatoires.
             </p>
-            <form class="contact-form">
+            <form class="contact-form" id="contactForm">
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Votre nom *</label>
-                  <input type="text" id="name" placeholder="Ex. Sara Amrani" />
+                  <input type="text" id="name" placeholder="Ex. Sara Amrani" required/>
                 </div>
                 <div class="form-group">
                   <label for="email">Votre e-mail *</label>
@@ -144,12 +147,13 @@
                     type="email"
                     id="email"
                     placeholder="vous@exemple.com"
+                    required
                   />
                 </div>
               </div>
               <div class="form-group">
-                <label for="house">Votre maison FORNO *</label>
-                <select id="house">
+                <label for="citySelect">Votre maison FORNO *</label>
+                <select id="citySelect" required>
                   <option value="Casablanca">Casablanca</option>
                   <option value="Belgique">Belgique</option>
                   <option value="France">France</option>
@@ -160,15 +164,15 @@
                 <label>Votre sujet</label>
                 <div class="radio-options">
                   <label class="radio-label">
-                    <input type="radio" name="subject" value="question" />
+                    <input type="radio" name="subject" value="question" required/>
                     <span>question</span>
                   </label>
                   <label class="radio-label">
-                    <input type="radio" name="subject" value="reservation" />
+                    <input type="radio" name="subject" value="reservation" required/>
                     <span>Réservation</span>
                   </label>
                   <label class="radio-label">
-                    <input type="radio" name="subject" value="evenement" />
+                    <input type="radio" name="subject" value="evenement" required/>
                     <span>Événement</span>
                   </label>
                 </div>
@@ -179,6 +183,7 @@
                   id="message"
                   rows="4"
                   placeholder="Dites-nous ce que vous avez en tête..."
+                  required
                 ></textarea>
               </div>
               <p class="demo-mode-text">
@@ -275,18 +280,28 @@
     <div class="cart-overlay" id="cartOverlay"></div>
     <aside class="cart-drawer" id="cartDrawer">
       <div class="cart-drawer-header">
-        <h2>Votre <em>Panier</em></h2>
+        <div class="cart-drawer-title">
+          <p>UNE ENVIE PREND FORM</p>
+          <h2>Mon Panier<span>.</span></h2>
+        </div>
         <button id="closeCartBtn" class="close-btn">&times;</button>
       </div>
       <div class="cart-drawer-items" id="cartItemsContainer">
-        <p class="empty-msg">Votre panier est vide pour le moment.</p>
+        <em>Une part?</em>
+        <h4>Votre panier attend sa pizza</h4>
+        <p class="empty-msg">
+          Choisissez votre recette et laissez la <br />
+          gourmande faire le reste.
+        </p>
       </div>
       <div class="cart-drawer-footer">
         <div class="cart-drawer-total">
           <span>Total</span>
           <p><span id="cartTotalPrice">0</span> MAD</p>
         </div>
-        <button class="checkout-btn">Commander</button>
+        <a class="checkout-btn" href="index.html#cartSection"
+          >Decouvrir la carte</a
+        >
       </div>
     </aside>
     <!-- Scripts -->
