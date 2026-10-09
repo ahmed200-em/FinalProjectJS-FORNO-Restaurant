@@ -204,6 +204,12 @@ if (checkoutBtn) {
 if (addButtons) {
   addButtons.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
+      btn.classList.add("added");
+      btn.textContent = 'Ajouté !';
+      setTimeout(function () {
+        btn.classList.remove("added");
+        btn.textContent = "+ Ajouter";
+      }, 1000);
       let card = e.target.closest(".card");
       let name = card.querySelector(".card-text-title").textContent.trim();
       let price = parseFloat(
@@ -279,7 +285,7 @@ if (contactForm) {
 
             <div class="detail-item">
               <span class="detail-label">E-MAIL</span>
-              <p class="detail-value">${Email.value}</p>
+              <p class="detail-value-email">${Email.value}</p>
             </div>
 
             <div class="detail-item">

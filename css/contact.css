@@ -180,13 +180,20 @@
   line-height: 1.5;
   text-transform: capitalize;
 }
-
+.detail-value-email {
+  font-size: 1rem;
+  color: var(--ink);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.5;
+}
 .result-footer-text {
   font-size: 0.85rem;
   color: var(--muted);
   margin-bottom: 1.5rem;
   line-height: 1.4;
 }
+
 
 .btn-submit {
   background-color: var(--red);
