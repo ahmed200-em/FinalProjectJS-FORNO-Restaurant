@@ -149,7 +149,7 @@ function renderCart() {
           <button class="plus-btn" data-index="${index}">+</button>
         </div>
       </div>
-      <button class="remove-btn" data-index="${index}">&times;</button>
+      <button class="remove-item-btn" data-index="${index}">&times;</button>
     `;
     checkoutBtn.textContent = `Commander (${totalItems})`;
     cartItemsContainer.appendChild(itemDiv);
@@ -161,7 +161,7 @@ function renderCart() {
 
   let minusButtons = document.querySelectorAll(".minus-btn");
   let plusButtons = document.querySelectorAll(".plus-btn");
-  let removeButtons = document.querySelectorAll(".remove-btn");
+  let removeButtons = document.querySelectorAll(".remove-item-btn");
 
   minusButtons.forEach(function (btn) {
     btn.addEventListener("click", function () {
@@ -205,7 +205,7 @@ if (addButtons) {
   addButtons.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
       btn.classList.add("added");
-      btn.textContent = 'Ajouté !';
+      btn.textContent = "Ajoutée !";
       setTimeout(function () {
         btn.classList.remove("added");
         btn.textContent = "+ Ajouter";
@@ -302,5 +302,23 @@ if (contactForm) {
         `;
       }
     }
+  });
+}
+let contactItem = document.querySelectorAll(".contact-location-item");
+if (contactItem) {
+  contactItem.forEach(function (item) {
+    item.addEventListener("click", function () {
+      if (item.classList.contains("active")) {
+        return;
+      }
+      contactItem.forEach(function (el) {
+        el.classList.remove("active");
+      });
+      item.classList.add("active");
+      let selectedCity = item.getAttribute("data-city");
+      if (selectedCity) {
+        citySelect.value = selectedCity;
+      }
+    });
   });
 }
