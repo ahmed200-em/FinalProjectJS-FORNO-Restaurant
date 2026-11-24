@@ -320,31 +320,10 @@
     </footer>
     <!-- Panier -->
     <p class="cart-status" id="cartStatus" role="status"></p>
-    <dialog class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle">
-      <div class="cart-drawer-header">
-        <div class="cart-drawer-title">
-          <p>UNE ENVIE PREND FORME</p>
-          <h2 id="cartTitle" tabindex="-1">Mon panier</h2>
-        </div>
-        <button type="button" id="closeCartBtn" class="close-btn" aria-label="Fermer le panier" autofocus>&times;</button>
-      </div>
-      <div class="cart-drawer-items" id="cartItemsContainer"></div>
-      <div class="cart-drawer-footer">
-        <div class="cart-drawer-total">
-          <span>Total</span>
-          <p><span id="cartTotalPrice">0</span> MAD</p>
-        </div>
-        <p class="cart-demo-note" id="cartDemoNote" hidden>
-          Ceci est une simulation. Aucune commande ne sera envoyée et aucun paiement ne sera effectué.
-        </p>
-        <a class="checkout-btn" id="browseMenuBtn" href="index.html#cartSection">Découvrir la carte</a>
-        <button type="button" class="checkout-btn" id="checkoutBtn" hidden>Vérifier la commande</button>
-        <button type="button" class="checkout-btn" id="confirmOrderBtn" aria-describedby="cartDemoNote" hidden>Confirmer la simulation</button>
-        <button type="button" class="cart-back-btn" id="backToCartBtn" hidden>Modifier le panier</button>
-      </div>
-    </dialog>
+    <dialog class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle"></dialog>
     <!-- Scripts -->
     <script src="js/main.js" defer></script>
+    <script src="js/cart-view.js" defer></script>
     <script src="js/cart.js" defer></script>
     <script src="js/locations.js" defer></script>
     <script src="js/contact.js" defer></script>
