@@ -716,6 +716,24 @@ main {
   border-radius: 0.5rem;
   background-color: white;
 }
+.search-icon {
+  position: relative;
+  flex: 0 0 0.75rem;
+  height: 0.75rem;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+.search-icon::after {
+  position: absolute;
+  right: -0.3rem;
+  bottom: -0.17rem;
+  width: 0.38rem;
+  height: 2px;
+  border-radius: 1px;
+  background: currentColor;
+  content: "";
+  transform: rotate(45deg);
+}
 .search-bar input {
   border: none;
   outline: none;
