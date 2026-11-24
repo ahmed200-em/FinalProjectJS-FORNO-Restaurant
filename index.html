@@ -71,59 +71,39 @@
       <section class="hero-section">
         <div class="hero-container">
           <div class="hero-text">
-            <div class="hero-subtitle">
-              <span></span>
-              <p>BONNE PATE. BONNE HUMEUR</p>
-            </div>
+            <p class="hero-subtitle">BONNE PÂTE. BONNE HUMEUR.</p>
             <h1>
               La pizza. <br />
               Comme on <br />
               <em>l'aime.</em>
             </h1>
             <p>
-              Une pate dorree, des ingredients genereux et ce <br />
-              petit gout qui donne envie de reprendre une part
+              Une pâte dorée, des ingrédients généreux et ce petit goût qui
+              donne envie de reprendre une part.
             </p>
             <a href="#cartSection">Je choisis ma pizza</a>
-            <div class="hero-recipes">
-              <span>6</span>
-              <p>
-                recettes a decouvrir <br />
-                Votre prochaine preferee est ici
-              </p>
-            </div>
           </div>
-          <div class="hero-image">
-            <img src="assets/images/hero-pizza-transparent.png" alt="" />
-          </div>
-          <div class="hero-cta">
-            <div class="hero-cta-text">
-              <span>LA BONNE</span>
-              <h1><em>part.</em></h1>
-              <span>C'EST PAR ICI</span>
-            </div>
-          </div>
-          <div class="hero-cta-image">
-            <p>LA MARGARITA - L'ORIGINALE</p>
-          </div>
-          <span class="hero-cta-date">01/06</span>
+          <figure class="hero-image">
+            <img
+              src="assets/images/hero-pizza-transparent.png"
+              width="1254"
+              height="1254"
+              fetchpriority="high"
+              alt="Pizza garnie de tomate, de mozzarella et de basilic"
+            />
+            <figcaption class="hero-cta-image">
+              <span>L’originale</span>
+              <strong>Margherita</strong>
+            </figcaption>
+          </figure>
         </div>
       </section>
       <section class="hero-info">
-        <div class="hero-info-container">
-          <div class="hero-info-text">
-            <span>01</span>
-            <p>Une pate doree</p>
-          </div>
-          <div class="hero-info-text">
-            <span>02</span>
-            <p>Des recettes genereux</p>
-          </div>
-          <div class="hero-info-text">
-            <span>03</span>
-            <p>A emporter ou sur place</p>
-          </div>
-        </div>
+        <ul class="hero-info-container">
+          <li>Une pâte dorée</li>
+          <li>Des recettes généreuses</li>
+          <li>Sur place, à emporter ou en livraison</li>
+        </ul>
       </section>
       <section class="cart-section" id="cartSection" aria-labelledby="menuTitle">
         <div class="cart-container">
@@ -132,10 +112,9 @@
               <p>À CHACUN SA PART</p>
               <h2 id="menuTitle">La carte des <em>envies.</em></h2>
             </div>
-            <div class="cart-text-subtitle">
-              <p>Les classiques qu'on adore.</p>
-              <p>Les nouvelles qu'on adopte.</p>
-            </div>
+            <p class="cart-text-subtitle">
+              Les classiques qu'on adore. Les nouvelles qu'on adopte.
+            </p>
           </div>
           <div class="cart-search">
             <div class="menu-field">
@@ -176,9 +155,14 @@
           <div class="cards">
             <div class="card" data-pizza="margherita" data-category="classiques">
               <div class="card-image">
-                <img src="assets/images/margherita.png" alt="" />
-                <span class="image-badge">L'ORIGINALE</span>
-                <span class="image-badge-number">01</span>
+                <img
+                  src="assets/images/margherita.png"
+                  width="1254"
+                  height="1254"
+                  loading="lazy"
+                  decoding="async"
+                  alt=""
+                />
               </div>
               <div class="card-text">
                 <p class="card-text-subtitle">CLASSIQUES</p>
@@ -186,7 +170,6 @@
                 <p class="card-ingredients">
                   Sauce tomate, mozzarella & basilic frais.
                 </p>
-                <p>&nbsp;</p>
                 <div class="price">
                   <p><span>49</span> MAD</p>
                   <button type="button" aria-label="Ajouter la Margherita au panier">
@@ -197,9 +180,14 @@
             </div>
             <div class="card" data-pizza="diavola" data-category="epicees">
               <div class="card-image">
-                <img src="assets/images/diavola.png" alt="" />
-                <span class="image-badge">UN PEU DE CARACTÈRE</span>
-                <span class="image-badge-number">02</span>
+                <img
+                  src="assets/images/diavola.png"
+                  width="1254"
+                  height="1254"
+                  loading="lazy"
+                  decoding="async"
+                  alt=""
+                />
               </div>
               <div class="card-text">
                 <p class="card-text-subtitle">ÉPICÉE</p>
@@ -217,9 +205,14 @@
             </div>
             <div class="card" data-pizza="pollo" data-category="signatures">
               <div class="card-image">
-                <img src="assets/images/pollo.png" alt="" />
-                <span class="image-badge">LA GÉNÉREUSE</span>
-                <span class="image-badge-number">03</span>
+                <img
+                  src="assets/images/pollo.png"
+                  width="1254"
+                  height="1254"
+                  loading="lazy"
+                  decoding="async"
+                  alt=""
+                />
               </div>
               <div class="card-text">
                 <p class="card-text-subtitle">SIGNATURES</p>
@@ -227,7 +220,6 @@
                 <p class="card-ingredients">
                   Crème, poulet rôti, champignons & mozzarella.
                 </p>
-                <p>&nbsp;</p>
                 <div class="price">
                   <p><span>79</span> MAD</p>
                   <button type="button" aria-label="Ajouter la Pollo au panier">
@@ -238,9 +230,14 @@
             </div>
             <div class="card" data-pizza="giardino" data-category="vegetariennes">
               <div class="card-image">
-                <img src="assets/images/giardino.png" alt="" />
-                <span class="image-badge">TOUT EN COULEURS</span>
-                <span class="image-badge-number">04</span>
+                <img
+                  src="assets/images/giardino.png"
+                  width="1254"
+                  height="1254"
+                  loading="lazy"
+                  decoding="async"
+                  alt=""
+                />
               </div>
               <div class="card-text">
                 <p class="card-text-subtitle">VÉGÉTARIENNES</p>
@@ -248,7 +245,6 @@
                 <p class="card-ingredients">
                   Sauce tomate, poivrons, champignons & olives.
                 </p>
-                <p>&nbsp;</p>
                 <div class="price">
                   <p><span>65</span> MAD</p>
                   <button type="button" aria-label="Ajouter la Giardino au panier">
@@ -259,9 +255,14 @@
             </div>
             <div class="card" data-pizza="tonno" data-category="signatures">
               <div class="card-image">
-                <img src="assets/images/tonno.png" alt="" />
-                <span class="image-badge">L'AIR DU LARGE</span>
-                <span class="image-badge-number">05</span>
+                <img
+                  src="assets/images/tonno.png"
+                  width="1254"
+                  height="1254"
+                  loading="lazy"
+                  decoding="async"
+                  alt=""
+                />
               </div>
               <div class="card-text">
                 <p class="card-text-subtitle">SIGNATURES</p>
@@ -269,7 +270,6 @@
                 <p class="card-ingredients">
                   Sauce tomate, thon, oignons rouges & mozzarella.
                 </p>
-                <p>&nbsp;</p>
                 <div class="price">
                   <p><span>75</span> MAD</p>
                   <button type="button" aria-label="Ajouter la Tonno au panier">
@@ -280,9 +280,14 @@
             </div>
             <div class="card" data-pizza="quattro-formaggi" data-category="classiques">
               <div class="card-image">
-                <img src="assets/images/quattro-formaggi.png" alt="" />
-                <span class="image-badge">POUR LES AMOUREUX</span>
-                <span class="image-badge-number">06</span>
+                <img
+                  src="assets/images/quattro-formaggi.png"
+                  width="1254"
+                  height="1254"
+                  loading="lazy"
+                  decoding="async"
+                  alt=""
+                />
               </div>
               <div class="card-text">
                 <p class="card-text-subtitle">CLASSIQUES</p>
@@ -290,7 +295,6 @@
                 <p class="card-ingredients">
                   Mozzarella, gorgonzola, chèvre & parmesan.
                 </p>
-                <p>&nbsp;</p>
                 <div class="price">
                   <p><span>85</span> MAD</p>
                   <button
