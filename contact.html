@@ -28,9 +28,10 @@
             <li><a href="about.html">À propos</a></li>
             <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
           </ul>
-          <div class="panier">
+          <button type="button" class="panier" aria-haspopup="dialog" aria-controls="cartDrawer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
               width="16"
               height="16"
               fill="currentColor"
@@ -41,31 +42,33 @@
                 d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2m3 4V3a3 3 0 1 0-6 0v2H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 1 0 1 0V6z"
               />
             </svg>
-            <p><a href="">Mon panier</a></p>
-            <span>0</span>
-          </div>
+            Mon panier
+            <span class="cart-count" data-cart-count aria-hidden="true">0</span>
+          </button>
         </nav>
         <div class="burger">
-          <div class="burger-menu" id="burgerMenu">
+          <button type="button" class="burger-menu" id="burgerMenu" aria-label="Menu de navigation" aria-expanded="false" aria-controls="burgerLinks">
             <span></span>
             <span></span>
             <span></span>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-handbag"
-            viewBox="0 0 16 16"
-            id="burgerBag"
-          >
-            <path
-              d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2m3 4V3a3 3 0 1 0-6 0v2H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 1 0 1 0V6z"
-            />
-            <span id="burgerBag-count">0</span>
-          </svg>
-          <div class="burger-links"></div>
+          </button>
+          <button type="button" id="burgerBag" aria-label="Mon panier" aria-haspopup="dialog" aria-controls="cartDrawer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-handbag"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+            >
+              <path
+                d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2m3 4V3a3 3 0 1 0-6 0v2H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 1 0 1 0V6z"
+              />
+            </svg>
+            <span class="cart-count" id="burgerBag-count" data-cart-count aria-hidden="true">0</span>
+          </button>
+          <nav class="burger-links" id="burgerLinks" aria-label="Navigation mobile" hidden></nav>
         </div>
       </div>
     </header>
@@ -319,38 +322,36 @@
         </div>
       </div>
     </footer>
-    <!-- ! side bar for panel  -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <aside class="cart-drawer" id="cartDrawer">
+    <!-- Panier -->
+    <p class="cart-status" id="cartStatus" role="status"></p>
+    <dialog class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle">
       <div class="cart-drawer-header">
         <div class="cart-drawer-title">
-          <p>UNE ENVIE PREND FORM</p>
-          <h2>Mon Panier<span>.</span></h2>
+          <p>UNE ENVIE PREND FORME</p>
+          <h2 id="cartTitle" tabindex="-1">Mon panier</h2>
         </div>
-        <button id="closeCartBtn" class="close-btn">&times;</button>
+        <button type="button" id="closeCartBtn" class="close-btn" aria-label="Fermer le panier" autofocus>&times;</button>
       </div>
-      <div class="cart-drawer-items" id="cartItemsContainer">
-        <em>Une part?</em>
-        <h4>Votre panier attend sa pizza</h4>
-        <p class="empty-msg">
-          Choisissez votre recette et laissez la <br />
-          gourmande faire le reste.
-        </p>
-      </div>
+      <div class="cart-drawer-items" id="cartItemsContainer"></div>
       <div class="cart-drawer-footer">
         <div class="cart-drawer-total">
           <span>Total</span>
           <p><span id="cartTotalPrice">0</span> MAD</p>
         </div>
-        <a class="checkout-btn" href="index.html#cartSection"
-          >Decouvrir la carte</a
-        >
+        <p class="cart-demo-note" id="cartDemoNote" hidden>
+          Ceci est une simulation. Aucune commande ne sera envoyée et aucun paiement ne sera effectué.
+        </p>
+        <a class="checkout-btn" id="browseMenuBtn" href="index.html#cartSection">Découvrir la carte</a>
+        <button type="button" class="checkout-btn" id="checkoutBtn" hidden>Vérifier la commande</button>
+        <button type="button" class="checkout-btn" id="confirmOrderBtn" aria-describedby="cartDemoNote" hidden>Confirmer la simulation</button>
+        <button type="button" class="cart-back-btn" id="backToCartBtn" hidden>Modifier le panier</button>
       </div>
-    </aside>
+    </dialog>
     <!-- Scripts -->
     <script src="js/particles.js" defer></script>
     <script src="js/animations.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/cart.js" defer></script>
     <script src="js/locations.js" defer></script>
     <script src="js/contact.js" defer></script>
   </body>
