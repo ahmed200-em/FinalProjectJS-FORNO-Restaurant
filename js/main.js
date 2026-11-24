@@ -1,117 +1,37 @@
 let burgerMenu = document.querySelector("#burgerMenu");
-let burgerLinks = document.querySelector(".burger-links");
-let linkList = document.createElement("ul");
-let searchInput = document.querySelector("#searchInput");
-let filterBar = document.querySelector(".filter-bar");
-let filterResultNumber = document.querySelector(".filter-result-number");
-let panierBtn = document.querySelector(".panier");
-let burgerBag = document.querySelector("#burgerBag");
-let cartDrawer = document.querySelector("#cartDrawer");
-let cartOverlay = document.querySelector("#cartOverlay");
-let closeCartBtn = document.querySelector("#closeCartBtn");
-let cartItemsContainer = document.querySelector("#cartItemsContainer");
-let cartTotalPrice = document.querySelector("#cartTotalPrice");
-let navCartCount = document.querySelector(".panier span");
-let burgerCartCount = document.querySelector("#burgerBag-count");
-let addButtons = document.querySelectorAll(".price button");
-let checkoutBtn = document.querySelector(".checkout-btn");
+let burgerLinks = document.querySelector("#burgerLinks");
+let linkList = document.querySelector(".nav-list").cloneNode(true);
 
-let cart = [];
+linkList.className = "burger-links-list";
+burgerLinks.appendChild(linkList);
 
-function updateFilterResultNumber() {
-  let cards = document.querySelectorAll(".card");
-  let visibleCards = Array.from(cards).filter(
-    (card) => card.style.display !== "none",
-  );
-  if (filterResultNumber) {
-    filterResultNumber.textContent = visibleCards.length;
+function setBurgerMenu(open) {
+  burgerLinks.hidden = !open;
+  burgerMenu.setAttribute("aria-expanded", open);
+}
+
+burgerMenu.addEventListener("click", function () {
+  setBurgerMenu(burgerLinks.hidden);
+});
+
+burgerLinks.addEventListener("click", function (event) {
+  if (event.target.closest("a")) setBurgerMenu(false);
+});
+
+document.addEventListener("click", function (event) {
+  if (!burgerMenu.contains(event.target) && !burgerLinks.contains(event.target)) {
+    setBurgerMenu(false);
   }
-}
+});
 
-function applyFilters() {
-  let searchValue = searchInput ? searchInput.value.toLowerCase() : "";
-  let filterValue = filterBar ? filterBar.value.toLowerCase() : "";
-  let cards = document.querySelectorAll(".card");
-
-  cards.forEach(function (card) {
-    let title = card
-      .querySelector(".card-text-title")
-      .textContent.toLowerCase();
-    let category = card
-      .querySelector(".card-text-subtitle")
-      .textContent.toLowerCase();
-
-    let matchesSearch = title.includes(searchValue);
-    let matchesCategory = filterValue === "" || category.includes(filterValue);
-
-    if (matchesSearch && matchesCategory) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
-
-  updateFilterResultNumber();
-}
-
-if (searchInput) {
-  searchInput.addEventListener("input", applyFilters);
-}
-
-if (filterBar) {
-  filterBar.addEventListener("change", applyFilters);
-}
-if (burgerMenu) {
-  linkList.className = "burger-links-list";
-  linkList.innerHTML = `
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="index.html#cartSection">Menu</a></li>
-      <li><a href="about.html">À propos</a></li>
-      <li><a href="contact.html">Contact</a></li>
-  `;
-
-  burgerMenu.addEventListener("click", function () {
-    if (burgerLinks.contains(linkList)) {
-      burgerLinks.removeChild(linkList);
-    } else {
-      burgerLinks.appendChild(linkList);
-    }
-  });
-}
-
-if (panierBtn && cartDrawer) {
-  panierBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    cartDrawer.classList.add("active");
-  });
-}
-
-if (burgerBag && cartDrawer) {
-  burgerBag.addEventListener("click", function () {
-    cartDrawer.classList.add("active");
-  });
-}
-
-if (closeCartBtn && cartDrawer) {
-  closeCartBtn.addEventListener("click", function () {
-    cartDrawer.classList.remove("active");
-  });
-}
-
-if (cartOverlay && cartDrawer) {
-  cartOverlay.addEventListener("click", function () {
-    cartDrawer.classList.remove("active");
-  });
-}
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" && !burgerLinks.hidden) {
+    setBurgerMenu(false);
+    burgerMenu.focus();
+  }
+});
 
 function renderCart() {
-  if (!cartItemsContainer) return;
-  if (cart.length > 0) {
-    cartItemsContainer.classList.add("active");
-  } else {
-    cartItemsContainer.classList.remove("active");
-  }
-
   cartItemsContainer.innerHTML = "";
 
   if (cart.length === 0) {
@@ -322,3 +242,6 @@ if (contactItem) {
     });
   });
 }
+window.matchMedia("(max-width: 768px)").addEventListener("change", function () {
+  setBurgerMenu(false);
+});

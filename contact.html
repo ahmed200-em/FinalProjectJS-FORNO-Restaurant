@@ -1,17 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/754a3808be.js"
-      crossorigin="anonymous"
-    ></script>
+    <meta name="description" content="Choisissez une maison FORNO et préparez votre message avec le formulaire de démonstration." />
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/contact.css" />
     <link rel="stylesheet" href="css/responsivity-contact.css" />
-    <link rel="stylesheet" href="css/animations.css" />
     <title>FORNO - Contact</title>
   </head>
   <body>
@@ -25,12 +21,13 @@
           <ul class="nav-list">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="index.html#cartSection">Notre carte</a></li>
-            <li><a href="about.html">A propos</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
           </ul>
-          <div class="panier">
+          <button type="button" class="panier" aria-haspopup="dialog" aria-controls="cartDrawer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
               width="16"
               height="16"
               fill="currentColor"
@@ -41,31 +38,33 @@
                 d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2m3 4V3a3 3 0 1 0-6 0v2H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 1 0 1 0V6z"
               />
             </svg>
-            <p><a href="">Mon panier</a></p>
-            <span>0</span>
-          </div>
+            Mon panier
+            <span class="cart-count" data-cart-count aria-hidden="true">0</span>
+          </button>
         </nav>
         <div class="burger">
-          <div class="burger-menu" id="burgerMenu">
+          <button type="button" class="burger-menu" id="burgerMenu" aria-label="Menu de navigation" aria-expanded="false" aria-controls="burgerLinks">
             <span></span>
             <span></span>
             <span></span>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-handbag"
-            viewBox="0 0 16 16"
-            id="burgerBag"
-          >
-            <path
-              d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2m3 4V3a3 3 0 1 0-6 0v2H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 1 0 1 0V6z"
-            />
-            <span id="burgerBag-count">0</span>
-          </svg>
-          <div class="burger-links"></div>
+          </button>
+          <button type="button" id="burgerBag" aria-label="Mon panier" aria-haspopup="dialog" aria-controls="cartDrawer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-handbag"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+            >
+              <path
+                d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2m3 4V3a3 3 0 1 0-6 0v2H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 1 0 1 0V6z"
+              />
+            </svg>
+            <span class="cart-count" id="burgerBag-count" data-cart-count aria-hidden="true">0</span>
+          </button>
+          <nav class="burger-links" id="burgerLinks" aria-label="Navigation mobile" hidden></nav>
         </div>
       </div>
     </header>
@@ -93,59 +92,65 @@
               question sur la carte : tout commence par une conversation.
             </p>
             <div class="contact-locations-list">
-              <div class="contact-location-item" data-city="Casablanca">
-                <span class="location-num">01</span>
-                <div>
+              <button type="button" class="contact-location-item active" data-city="Casablanca" aria-pressed="true">
+                <span class="location-num" aria-hidden="true">01</span>
+                <span>
                   <strong>Casablanca</strong>
-                  <p>Maroc</p>
-                </div>
-              </div>
-              <div class="contact-location-item" data-city="Belgique">
-                <span class="location-num">02</span>
-                <div>
+                  <span class="location-region">Maroc</span>
+                </span>
+              </button>
+              <button type="button" class="contact-location-item" data-city="Belgique" aria-pressed="false">
+                <span class="location-num" aria-hidden="true">02</span>
+                <span>
                   <strong>Belgique</strong>
-                  <p>Europe</p>
-                </div>
-              </div>
-              <div class="contact-location-item" data-city="France">
-                <span class="location-num">03</span>
-                <div>
+                  <span class="location-region">Europe</span>
+                </span>
+              </button>
+              <button type="button" class="contact-location-item" data-city="France" aria-pressed="false">
+                <span class="location-num" aria-hidden="true">03</span>
+                <span>
                   <strong>France</strong>
-                  <p>Europe</p>
-                </div>
-              </div>
-              <div class="contact-location-item" data-city="Emirats">
-                <span class="location-num">04</span>
-                <div>
+                  <span class="location-region">Europe</span>
+                </span>
+              </button>
+              <button type="button" class="contact-location-item" data-city="Emirats" aria-pressed="false">
+                <span class="location-num" aria-hidden="true">04</span>
+                <span>
                   <strong>Émirats arabes unis</strong>
-                  <p>Moyen-Orient</p>
-                </div>
-              </div>
+                  <span class="location-region">Moyen-Orient</span>
+                </span>
+              </button>
             </div>
             <p class="contact-info-footer">
               Les détails pratiques d'une adresse se précisent avec la maison
               concernée.
             </p>
           </div>
-          <div class="submited-form-result">
-            <p>Votre message a été envoyé avec succès !</p>
-          </div>
           <div class="contact-form-card">
-            <h2>Un petit <em>mot.</em></h2>
-            <p class="form-required-note">
-              Les champs marqués d'un astérisque sont obligatoires.
-            </p>
             <form class="contact-form" id="contactForm">
+              <div>
+                <h2>Un petit <em>mot.</em></h2>
+                <p class="form-required-note">
+                  Les champs marqués d'un astérisque sont obligatoires.
+                </p>
+              </div>
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Votre nom *</label>
-                  <input type="text" id="name" placeholder="Ex. Sara Amrani" required/>
+                  <input
+                    type="text"
+                    id="name"
+                    autocomplete="name"
+                    placeholder="Ex. Sara Amrani"
+                    required
+                  />
                 </div>
                 <div class="form-group">
                   <label for="email">Votre e-mail *</label>
                   <input
                     type="email"
                     id="email"
+                    autocomplete="email"
                     placeholder="vous@exemple.com"
                     required
                   />
@@ -160,23 +165,23 @@
                   <option value="Emirats">Émirats arabes unis</option>
                 </select>
               </div>
-              <div class="form-group">
-                <label>Votre sujet</label>
+              <fieldset class="form-group">
+                <legend>Votre sujet *</legend>
                 <div class="radio-options">
                   <label class="radio-label">
-                    <input type="radio" name="subject" value="question" required/>
-                    <span>question</span>
+                    <input type="radio" name="subject" value="Question" required />
+                    <span>Question</span>
                   </label>
                   <label class="radio-label">
-                    <input type="radio" name="subject" value="reservation" required/>
+                    <input type="radio" name="subject" value="Réservation" required />
                     <span>Réservation</span>
                   </label>
                   <label class="radio-label">
-                    <input type="radio" name="subject" value="evenement" required/>
+                    <input type="radio" name="subject" value="Événement" required />
                     <span>Événement</span>
                   </label>
                 </div>
-              </div>
+              </fieldset>
               <div class="form-group">
                 <label for="message">Votre message *</label>
                 <textarea
@@ -186,13 +191,50 @@
                   required
                 ></textarea>
               </div>
-              <p class="demo-mode-text">
-                Mode démonstration : aucun message n'est envoyé.
+              <p class="demo-mode-text" id="contactDemoNote">
+                En mode démonstration, votre message reste sur cette page.
               </p>
-              <button type="submit" class="submit-btn">
+              <noscript>
+                Activez JavaScript pour afficher l'aperçu de votre message.
+              </noscript>
+              <button type="submit" class="submit-btn" aria-describedby="contactDemoNote" disabled>
                 Préparer mon message
               </button>
             </form>
+            <section id="contactReview" aria-labelledby="contactReviewTitle" hidden>
+              <h2 id="contactReviewTitle" tabindex="-1" aria-describedby="contactReviewNote">
+                Votre <em>message.</em>
+              </h2>
+              <p class="result-subtitle" id="contactReviewNote">
+                Voici votre aperçu de démonstration. Aucun message n'a été envoyé.
+              </p>
+              <dl class="result-details">
+                <div class="detail-item">
+                  <dt class="detail-label">Nom</dt>
+                  <dd class="detail-value" id="reviewName"></dd>
+                </div>
+                <div class="detail-item">
+                  <dt class="detail-label">E-mail</dt>
+                  <dd class="detail-value" id="reviewEmail"></dd>
+                </div>
+                <div class="detail-item">
+                  <dt class="detail-label">Maison FORNO</dt>
+                  <dd class="detail-value" id="reviewCity"></dd>
+                </div>
+                <div class="detail-item">
+                  <dt class="detail-label">Sujet</dt>
+                  <dd class="detail-value" id="reviewSubject"></dd>
+                </div>
+                <div class="detail-item">
+                  <dt class="detail-label">Message</dt>
+                  <dd class="detail-value detail-message" id="reviewMessage"></dd>
+                </div>
+              </dl>
+              <div class="result-actions">
+                <button type="button" class="submit-btn" id="editMessageBtn">Modifier le message</button>
+                <button type="button" class="submit-btn reset-message-btn" id="resetFormBtn">Écrire un autre message</button>
+              </div>
+            </section>
           </div>
         </div>
       </section>
@@ -216,9 +258,9 @@
               <details class="faq-question">
                 <summary>Comment signaler une allergie ?</summary>
                 <p>
-                  Vous pouvez signaler une allergie en cochant la case
-                  correspondante sur le formulaire de réservation ou en nous
-                  contactant directement.
+                  Indiquez votre allergie dans le message du
+                  <a href="#contactSection">formulaire de contact</a> et
+                  sélectionnez la maison concernée.
                 </p>
               </details>
               <span class="faq-toggle">+</span>
@@ -227,8 +269,8 @@
               <details class="faq-question">
                 <summary>Je prépare un événement. À qui écrire ?</summary>
                 <p>
-                  Vous pouvez nous contacter via le formulaire de contact ou par
-                  e-mail.
+                  Choisissez la maison concernée et le sujet « Événement »
+                  dans le <a href="#contactSection">formulaire de contact</a>.
                 </p>
               </details>
               <span class="faq-toggle">+</span>
@@ -254,59 +296,57 @@
               <a href="index.html">Accueil</a>
               <a href="index.html#cartSection">Notre carte</a>
               <a href="about.html">À propos de nous</a>
-              <a href="contact.html">Contactez-nous</a>
+              <a href="#contactSection">Contactez-nous</a>
             </div>
             <div class="footer-column">
               <h3>Nos horizons</h3>
-              <a href="">Casablanca</a>
-              <a href="">Belgique</a>
-              <a href="">France</a>
-              <a href="">Émirats arabes unis</a>
+              <a href="?city=Casablanca#contactSection">Casablanca</a>
+              <a href="?city=Belgique#contactSection">Belgique</a>
+              <a href="?city=France#contactSection">France</a>
+              <a href="?city=Emirats#contactSection">Émirats arabes unis</a>
             </div>
           </div>
           <div class="footer-column">
             <h3>On se retrouve ?</h3>
             <p>Une question, une grande table ou une occasion à célébrer ?</p>
-            <a href="contact.html" class="footer-contact">Parlons-en</a>
+            <a href="#contactSection" class="footer-contact">Parlons-en</a>
           </div>
         </div>
         <div class="footer-bottom">
           <p>© 2026 FORNO. La pizza autrement.</p>
-          <p>Conditions et mentions de confidentialité.</p>
+          <p>Site de démonstration.</p>
         </div>
       </div>
     </footer>
-    <!-- ! side bar for panel  -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <aside class="cart-drawer" id="cartDrawer">
+    <!-- Panier -->
+    <p class="cart-status" id="cartStatus" role="status"></p>
+    <dialog class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle">
       <div class="cart-drawer-header">
         <div class="cart-drawer-title">
-          <p>UNE ENVIE PREND FORM</p>
-          <h2>Mon Panier<span>.</span></h2>
+          <p>UNE ENVIE PREND FORME</p>
+          <h2 id="cartTitle" tabindex="-1">Mon panier</h2>
         </div>
-        <button id="closeCartBtn" class="close-btn">&times;</button>
+        <button type="button" id="closeCartBtn" class="close-btn" aria-label="Fermer le panier" autofocus>&times;</button>
       </div>
-      <div class="cart-drawer-items" id="cartItemsContainer">
-        <em>Une part?</em>
-        <h4>Votre panier attend sa pizza</h4>
-        <p class="empty-msg">
-          Choisissez votre recette et laissez la <br />
-          gourmande faire le reste.
-        </p>
-      </div>
+      <div class="cart-drawer-items" id="cartItemsContainer"></div>
       <div class="cart-drawer-footer">
         <div class="cart-drawer-total">
           <span>Total</span>
           <p><span id="cartTotalPrice">0</span> MAD</p>
         </div>
-        <a class="checkout-btn" href="index.html#cartSection"
-          >Decouvrir la carte</a
-        >
+        <p class="cart-demo-note" id="cartDemoNote" hidden>
+          Ceci est une simulation. Aucune commande ne sera envoyée et aucun paiement ne sera effectué.
+        </p>
+        <a class="checkout-btn" id="browseMenuBtn" href="index.html#cartSection">Découvrir la carte</a>
+        <button type="button" class="checkout-btn" id="checkoutBtn" hidden>Vérifier la commande</button>
+        <button type="button" class="checkout-btn" id="confirmOrderBtn" aria-describedby="cartDemoNote" hidden>Confirmer la simulation</button>
+        <button type="button" class="cart-back-btn" id="backToCartBtn" hidden>Modifier le panier</button>
       </div>
-    </aside>
+    </dialog>
     <!-- Scripts -->
-    <script src="js/particles.js" defer></script>
-    <script src="js/animations.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/locations.js" defer></script>
+    <script src="js/contact.js" defer></script>
   </body>
 </html>

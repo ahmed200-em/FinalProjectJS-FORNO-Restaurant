@@ -1,50 +1,4 @@
 @media (max-width: 768px) {
-  .header-div {
-    padding: 0.5rem 0 1rem 0;
-  }
-  .nav {
-    display: none;
-  }
-  #burgerBag {
-    position: relative;
-    display: flex;
-    height: 100%;
-    stroke-width: 1px;
-    width: 1.5rem;
-  }
-  #burgerBag-count {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 1.2rem;
-    height: 1.2rem;
-    border-radius: 50%;
-    background-color: var(--red);
-    color: white;
-    font-weight: 200;
-    font-size: 0.7rem;
-  }
-
-  .burger {
-    display: flex;
-    gap: 1rem;
-  }
-  .burger-menu {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .burger-menu span {
-    width: 30px;
-    height: 6px;
-    background-color: rgb(23, 21, 21);
-    margin: 1px;
-    border-radius: 0.13rem;
-  }
   .hero-container {
     flex-direction: column;
     align-items: center;
@@ -94,14 +48,8 @@
     font-size: 0.7rem;
   }
   .cart-search {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .search-bar {
-    width: 100%;
-  }
-  .filter-bar {
-    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
   }
   .cart-text {
     flex-direction: column;

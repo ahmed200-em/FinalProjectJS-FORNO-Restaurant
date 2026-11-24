@@ -88,8 +88,15 @@
   padding: 0.8rem 1rem;
   border-radius: 0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  color: inherit;
+  text-align: left;
   transition: background-color 0.3s ease;
   cursor: pointer;
+}
+.contact-location-item:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
 }
 .contact-location-item.active {
   background-color: rgba(255, 255, 255, 0.15);
@@ -103,7 +110,8 @@
   display: block;
   font-size: 0.85rem;
 }
-.contact-location-item p {
+.location-region {
+  display: block;
   font-size: 0.65rem;
   opacity: 0.8;
 }
@@ -118,42 +126,19 @@
   padding: 2.5rem;
   border-radius: 0.8rem;
   border: 1px solid var(--line);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.submited-form-result {
-  display: none;
-  background-color: var(--surface);
-  border: 1px solid var(--line);
-  padding: 2.5rem;
-  border-radius: 12px;
-  max-width: 550px;
-  width: 100%;
-}
-
-.result-title {
-  font-size: 1.8rem;
-  color: var(--ink);
-  margin-bottom: 0.25rem;
-}
-
-.result-title em {
-  color: var(--red);
 }
 
 .result-subtitle {
   color: var(--muted);
   font-size: 0.95rem;
-  margin-bottom: 2rem;
+  margin: 0.5rem 0 1.5rem;
 }
 
 .result-details {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
 }
 .detail-item {
   border-bottom: 1px solid var(--line);
@@ -165,7 +150,7 @@
 }
 .detail-label {
   display: block;
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--muted);
   letter-spacing: 0.05em;
@@ -178,32 +163,23 @@
   font-weight: 500;
   margin: 0;
   line-height: 1.5;
-  text-transform: capitalize;
-}
-.detail-value-email {
-  font-size: 1rem;
-  color: var(--ink);
-  font-weight: 500;
-  margin: 0;
-  line-height: 1.5;
-}
-.result-footer-text {
-  font-size: 0.85rem;
-  color: var(--muted);
-  margin-bottom: 1.5rem;
-  line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
+.detail-message {
+  white-space: pre-wrap;
+}
 
-.btn-submit {
-  background-color: var(--red);
-  color: #ffffff;
-  border: none;
-  padding: 0.85rem 1.75rem;
-  border-radius: 6px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+.result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.result-actions .reset-message-btn {
+  background-color: transparent;
+  color: var(--red);
+  border: 1px solid var(--red);
 }
 
 .contact-form-card h2 {
@@ -213,14 +189,17 @@
   color: var(--red);
 }
 .form-required-note {
-  font-size: 0.7rem;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
   color: var(--muted);
 }
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  margin-top: 0.5rem;
+}
+.contact-form[hidden] {
+  display: none;
 }
 .form-row {
   display: flex;
@@ -228,13 +207,23 @@
 }
 .form-row .form-group {
   flex: 1;
+  min-width: 0;
 }
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
 }
-.form-group label {
+fieldset.form-group {
+  border: 0;
+  padding: 0;
+  min-width: 0;
+}
+.form-group legend {
+  margin-bottom: 0.4rem;
+}
+.form-group label,
+.form-group legend {
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--ink);
@@ -247,8 +236,13 @@
   border: 1px solid var(--line);
   border-radius: 0.4rem;
   background-color: white;
-  outline: none;
   font-size: 0.8rem;
+}
+
+.form-group :focus-visible,
+.contact-form-card button:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
 }
 
 .radio-options {
@@ -282,7 +276,7 @@
   background-color: #ffe8e5;
 }
 .demo-mode-text {
-  font-size: 0.68rem;
+  font-size: 0.8rem;
   color: var(--muted);
 }
 .submit-btn {
@@ -294,6 +288,10 @@
   font-weight: 700;
   font-size: 0.85rem;
   cursor: pointer;
+}
+.submit-btn:disabled {
+  opacity: 0.65;
+  cursor: default;
 }
 .contact-faq-section {
   width: 100%;
