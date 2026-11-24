@@ -127,25 +127,31 @@
               concernée.
             </p>
           </div>
-          <div class="submited-form-result">
-            <p>Votre message a été envoyé avec succès !</p>
-          </div>
           <div class="contact-form-card">
-            <h2>Un petit <em>mot.</em></h2>
-            <p class="form-required-note">
-              Les champs marqués d'un astérisque sont obligatoires.
-            </p>
             <form class="contact-form" id="contactForm">
+              <div>
+                <h2>Un petit <em>mot.</em></h2>
+                <p class="form-required-note">
+                  Les champs marqués d'un astérisque sont obligatoires.
+                </p>
+              </div>
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Votre nom *</label>
-                  <input type="text" id="name" placeholder="Ex. Sara Amrani" required/>
+                  <input
+                    type="text"
+                    id="name"
+                    autocomplete="name"
+                    placeholder="Ex. Sara Amrani"
+                    required
+                  />
                 </div>
                 <div class="form-group">
                   <label for="email">Votre e-mail *</label>
                   <input
                     type="email"
                     id="email"
+                    autocomplete="email"
                     placeholder="vous@exemple.com"
                     required
                   />
@@ -160,23 +166,23 @@
                   <option value="Emirats">Émirats arabes unis</option>
                 </select>
               </div>
-              <div class="form-group">
-                <label>Votre sujet</label>
+              <fieldset class="form-group">
+                <legend>Votre sujet *</legend>
                 <div class="radio-options">
                   <label class="radio-label">
-                    <input type="radio" name="subject" value="question" required/>
-                    <span>question</span>
+                    <input type="radio" name="subject" value="Question" required />
+                    <span>Question</span>
                   </label>
                   <label class="radio-label">
-                    <input type="radio" name="subject" value="reservation" required/>
+                    <input type="radio" name="subject" value="Réservation" required />
                     <span>Réservation</span>
                   </label>
                   <label class="radio-label">
-                    <input type="radio" name="subject" value="evenement" required/>
+                    <input type="radio" name="subject" value="Événement" required />
                     <span>Événement</span>
                   </label>
                 </div>
-              </div>
+              </fieldset>
               <div class="form-group">
                 <label for="message">Votre message *</label>
                 <textarea
@@ -186,13 +192,50 @@
                   required
                 ></textarea>
               </div>
-              <p class="demo-mode-text">
-                Mode démonstration : aucun message n'est envoyé.
+              <p class="demo-mode-text" id="contactDemoNote">
+                En mode démonstration, votre message reste sur cette page.
               </p>
-              <button type="submit" class="submit-btn">
+              <noscript>
+                Activez JavaScript pour afficher l'aperçu de votre message.
+              </noscript>
+              <button type="submit" class="submit-btn" aria-describedby="contactDemoNote" disabled>
                 Préparer mon message
               </button>
             </form>
+            <section id="contactReview" aria-labelledby="contactReviewTitle" hidden>
+              <h2 id="contactReviewTitle" tabindex="-1" aria-describedby="contactReviewNote">
+                Votre <em>message.</em>
+              </h2>
+              <p class="result-subtitle" id="contactReviewNote">
+                Voici votre aperçu de démonstration. Aucun message n'a été envoyé.
+              </p>
+              <dl class="result-details">
+                <div class="detail-item">
+                  <dt class="detail-label">Nom</dt>
+                  <dd class="detail-value" id="reviewName"></dd>
+                </div>
+                <div class="detail-item">
+                  <dt class="detail-label">E-mail</dt>
+                  <dd class="detail-value" id="reviewEmail"></dd>
+                </div>
+                <div class="detail-item">
+                  <dt class="detail-label">Maison FORNO</dt>
+                  <dd class="detail-value" id="reviewCity"></dd>
+                </div>
+                <div class="detail-item">
+                  <dt class="detail-label">Sujet</dt>
+                  <dd class="detail-value" id="reviewSubject"></dd>
+                </div>
+                <div class="detail-item">
+                  <dt class="detail-label">Message</dt>
+                  <dd class="detail-value detail-message" id="reviewMessage"></dd>
+                </div>
+              </dl>
+              <div class="result-actions">
+                <button type="button" class="submit-btn" id="editMessageBtn">Modifier le message</button>
+                <button type="button" class="submit-btn reset-message-btn" id="resetFormBtn">Écrire un autre message</button>
+              </div>
+            </section>
           </div>
         </div>
       </section>
@@ -308,5 +351,6 @@
     <script src="js/particles.js" defer></script>
     <script src="js/animations.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/contact.js" defer></script>
   </body>
 </html>
