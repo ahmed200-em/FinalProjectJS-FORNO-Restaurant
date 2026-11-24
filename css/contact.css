@@ -88,8 +88,15 @@
   padding: 0.8rem 1rem;
   border-radius: 0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  color: inherit;
+  text-align: left;
   transition: background-color 0.3s ease;
   cursor: pointer;
+}
+.contact-location-item:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
 }
 .contact-location-item.active {
   background-color: rgba(255, 255, 255, 0.15);
@@ -103,7 +110,8 @@
   display: block;
   font-size: 0.85rem;
 }
-.contact-location-item p {
+.location-region {
+  display: block;
   font-size: 0.65rem;
   opacity: 0.8;
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,8 +25,8 @@
           <ul class="nav-list">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="index.html#cartSection">Notre carte</a></li>
-            <li><a href="about.html">A propos</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
           </ul>
           <div class="panier">
             <svg
@@ -93,34 +93,34 @@
               question sur la carte : tout commence par une conversation.
             </p>
             <div class="contact-locations-list">
-              <div class="contact-location-item active" data-city="Casablanca">
-                <span class="location-num">01</span>
-                <div>
+              <button type="button" class="contact-location-item active" data-city="Casablanca" aria-pressed="true">
+                <span class="location-num" aria-hidden="true">01</span>
+                <span>
                   <strong>Casablanca</strong>
-                  <p>Maroc</p>
-                </div>
-              </div>
-              <div class="contact-location-item" data-city="Belgique">
-                <span class="location-num">02</span>
-                <div>
+                  <span class="location-region">Maroc</span>
+                </span>
+              </button>
+              <button type="button" class="contact-location-item" data-city="Belgique" aria-pressed="false">
+                <span class="location-num" aria-hidden="true">02</span>
+                <span>
                   <strong>Belgique</strong>
-                  <p>Europe</p>
-                </div>
-              </div>
-              <div class="contact-location-item" data-city="France">
-                <span class="location-num">03</span>
-                <div>
+                  <span class="location-region">Europe</span>
+                </span>
+              </button>
+              <button type="button" class="contact-location-item" data-city="France" aria-pressed="false">
+                <span class="location-num" aria-hidden="true">03</span>
+                <span>
                   <strong>France</strong>
-                  <p>Europe</p>
-                </div>
-              </div>
-              <div class="contact-location-item" data-city="Emirats">
-                <span class="location-num">04</span>
-                <div>
+                  <span class="location-region">Europe</span>
+                </span>
+              </button>
+              <button type="button" class="contact-location-item" data-city="Emirats" aria-pressed="false">
+                <span class="location-num" aria-hidden="true">04</span>
+                <span>
                   <strong>Émirats arabes unis</strong>
-                  <p>Moyen-Orient</p>
-                </div>
-              </div>
+                  <span class="location-region">Moyen-Orient</span>
+                </span>
+              </button>
             </div>
             <p class="contact-info-footer">
               Les détails pratiques d'une adresse se précisent avec la maison
@@ -259,9 +259,9 @@
               <details class="faq-question">
                 <summary>Comment signaler une allergie ?</summary>
                 <p>
-                  Vous pouvez signaler une allergie en cochant la case
-                  correspondante sur le formulaire de réservation ou en nous
-                  contactant directement.
+                  Indiquez votre allergie dans le message du
+                  <a href="#contactSection">formulaire de contact</a> et
+                  sélectionnez la maison concernée.
                 </p>
               </details>
               <span class="faq-toggle">+</span>
@@ -270,8 +270,8 @@
               <details class="faq-question">
                 <summary>Je prépare un événement. À qui écrire ?</summary>
                 <p>
-                  Vous pouvez nous contacter via le formulaire de contact ou par
-                  e-mail.
+                  Choisissez la maison concernée et le sujet « Événement »
+                  dans le <a href="#contactSection">formulaire de contact</a>.
                 </p>
               </details>
               <span class="faq-toggle">+</span>
@@ -297,25 +297,25 @@
               <a href="index.html">Accueil</a>
               <a href="index.html#cartSection">Notre carte</a>
               <a href="about.html">À propos de nous</a>
-              <a href="contact.html">Contactez-nous</a>
+              <a href="#contactSection">Contactez-nous</a>
             </div>
             <div class="footer-column">
               <h3>Nos horizons</h3>
-              <a href="">Casablanca</a>
-              <a href="">Belgique</a>
-              <a href="">France</a>
-              <a href="">Émirats arabes unis</a>
+              <a href="?city=Casablanca#contactSection">Casablanca</a>
+              <a href="?city=Belgique#contactSection">Belgique</a>
+              <a href="?city=France#contactSection">France</a>
+              <a href="?city=Emirats#contactSection">Émirats arabes unis</a>
             </div>
           </div>
           <div class="footer-column">
             <h3>On se retrouve ?</h3>
             <p>Une question, une grande table ou une occasion à célébrer ?</p>
-            <a href="contact.html" class="footer-contact">Parlons-en</a>
+            <a href="#contactSection" class="footer-contact">Parlons-en</a>
           </div>
         </div>
         <div class="footer-bottom">
           <p>© 2026 FORNO. La pizza autrement.</p>
-          <p>Conditions et mentions de confidentialité.</p>
+          <p>Site de démonstration.</p>
         </div>
       </div>
     </footer>
@@ -351,6 +351,7 @@
     <script src="js/particles.js" defer></script>
     <script src="js/animations.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/locations.js" defer></script>
     <script src="js/contact.js" defer></script>
   </body>
 </html>

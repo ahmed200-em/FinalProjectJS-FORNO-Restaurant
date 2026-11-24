@@ -1,9 +1,6 @@
 let burgerMenu = document.querySelector("#burgerMenu");
 let burgerLinks = document.querySelector(".burger-links");
 let linkList = document.createElement("ul");
-let searchInput = document.querySelector("#searchInput");
-let filterBar = document.querySelector(".filter-bar");
-let filterResultNumber = document.querySelector(".filter-result-number");
 let panierBtn = document.querySelector(".panier");
 let burgerBag = document.querySelector("#burgerBag");
 let cartDrawer = document.querySelector("#cartDrawer");
@@ -18,49 +15,6 @@ let checkoutBtn = document.querySelector(".checkout-btn");
 
 let cart = [];
 
-function updateFilterResultNumber() {
-  let cards = document.querySelectorAll(".card");
-  let visibleCards = Array.from(cards).filter(
-    (card) => card.style.display !== "none",
-  );
-  if (filterResultNumber) {
-    filterResultNumber.textContent = visibleCards.length;
-  }
-}
-
-function applyFilters() {
-  let searchValue = searchInput ? searchInput.value.toLowerCase() : "";
-  let filterValue = filterBar ? filterBar.value.toLowerCase() : "";
-  let cards = document.querySelectorAll(".card");
-
-  cards.forEach(function (card) {
-    let title = card
-      .querySelector(".card-text-title")
-      .textContent.toLowerCase();
-    let category = card
-      .querySelector(".card-text-subtitle")
-      .textContent.toLowerCase();
-
-    let matchesSearch = title.includes(searchValue);
-    let matchesCategory = filterValue === "" || category.includes(filterValue);
-
-    if (matchesSearch && matchesCategory) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
-
-  updateFilterResultNumber();
-}
-
-if (searchInput) {
-  searchInput.addEventListener("input", applyFilters);
-}
-
-if (filterBar) {
-  filterBar.addEventListener("change", applyFilters);
-}
 if (burgerMenu) {
   linkList.className = "burger-links-list";
   linkList.innerHTML = `
@@ -231,13 +185,4 @@ if (addButtons) {
       renderCart();
     });
   });
-}
-let citySelect = document.querySelector("#citySelect");
-if (citySelect) {
-  let urlParams = new URLSearchParams(window.location.search);
-  let selectedCity = urlParams.get("city");
-
-  if (selectedCity) {
-    citySelect.value = selectedCity;
-  }
 }

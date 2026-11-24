@@ -543,6 +543,9 @@ main {
   font-size: 0.7rem;
   color: var(--red);
 }
+.cart-text-title h2 {
+  font-size: 2rem;
+}
 .cart-text-title em {
   font-weight: 600;
   color: var(--red);
@@ -560,13 +563,22 @@ main {
 }
 .cart-search {
   padding: 1.5rem 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, 20%);
   gap: 1rem;
 }
-.search-bar {
-  width: 80%;
+.menu-field {
   display: flex;
-  padding: 0.65rem 0rem 0.65rem 1.2rem;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.menu-field label {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.search-bar {
+  display: flex;
+  padding: 0 0 0 1.2rem;
   gap: 1rem;
   align-items: center;
   justify-content: center;
@@ -579,19 +591,39 @@ main {
   outline: none;
   background-color: transparent;
   width: 100%;
+  min-width: 0;
+  min-height: 2.75rem;
+  padding-right: 1rem;
 }
 .filter-bar {
-  width: 20%;
+  min-height: 2.75rem;
   padding: 0.65rem 1rem 0.65rem 1.2rem;
   border: 1px solid var(--line);
   border-radius: 0.5rem;
   background-color: white;
   color: var(--muted);
+  font: inherit;
+}
+.search-bar:focus-within,
+.filter-bar:focus-visible,
+.filter-reset:focus-visible,
+.price button:focus-visible {
+  outline: 2px solid var(--red-dark);
+  outline-offset: 2px;
 }
 .filter-result {
   color: var(--muted);
   font-weight: 600;
   font-size: 0.8rem;
+}
+.filter-reset {
+  min-height: 2.75rem;
+  border: 0;
+  background: transparent;
+  color: var(--red-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
 }
 .cards {
   display: flex;
@@ -610,15 +642,20 @@ main {
   align-items: center;
   border-radius: 1rem;
 }
+.card[hidden] {
+  display: none;
+}
 .card-image {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 .card-image img {
-  width: 17rem;
-  height: 17rem;
+  width: min(100%, 17rem);
+  aspect-ratio: 1;
+  object-fit: contain;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -685,6 +722,7 @@ main {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   width: 6rem;
+  min-height: 2.75rem;
   border: none;
   background-color: var(--red);
   color: white;

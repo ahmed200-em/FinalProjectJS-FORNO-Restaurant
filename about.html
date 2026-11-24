@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,7 +25,7 @@
           <ul class="nav-list">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="index.html#cartSection">Notre carte</a></li>
-            <li><a href="about.html" class="active">A propos</a></li>
+            <li><a href="about.html" class="active" aria-current="page">À propos</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
           <div class="panier">
@@ -83,7 +83,7 @@
           </p>
         </div>
       </section>
-      <section class="about-story-section">
+      <section class="about-story-section" id="aboutSection">
         <div class="about-story-container">
           <div class="about-story-image">
             <img
@@ -154,7 +154,7 @@
           <p>- L'ÉQUIPE FORNO</p>
         </div>
       </section>
-      <section class="about-chefs-section">
+      <section class="about-chefs-section" id="chefsSection">
         <div class="about-chefs-container">
           <div class="about-chefs-image">
             <img src="assets/images/chefs.png" alt="Chefs FORNO" />
@@ -192,7 +192,7 @@
                 <p>L'amour de la table à chaque cuisson.</p>
               </div>
             </div>
-            <p><a href="">Voir toute l'histoire</a></p>
+            <p><a href="#aboutSection">Voir toute l'histoire</a></p>
           </div>
         </div>
       </section>
@@ -223,7 +223,7 @@
                 Notre ancrage marocain, une table généreuse et une envie de
                 partager.
               </p>
-              <a href="">Contacter cette maison</a>
+              <a href="contact.html?city=Casablanca#contactSection">Contacter cette maison</a>
             </div>
             <div class="horizon-card">
               <div class="horizon-number">02 / 04</div>
@@ -232,21 +232,21 @@
               <p>
                 La convivialité belge rencontre notre passion pour la pizza.
               </p>
-              <a href="">Contacter cette maison</a>
+              <a href="contact.html?city=Belgique#contactSection">Contacter cette maison</a>
             </div>
             <div class="horizon-card">
               <div class="horizon-number">03 / 04</div>
               <p class="horizon-country">EUROPE</p>
               <h2>France</h2>
               <p>De belles choses, autour d'une pizza bien faite.</p>
-              <a href="">Contacter cette maison</a>
+              <a href="contact.html?city=France#contactSection">Contacter cette maison</a>
             </div>
             <div class="horizon-card">
               <div class="horizon-number">04 / 04</div>
               <p class="horizon-country">MOYEN-ORIENT</p>
               <h2>Émirats arabes unis</h2>
               <p>Une cuisine ouverte sur le monde, pour toutes les envies.</p>
-              <a href="">Contacter cette maison</a>
+              <a href="contact.html?city=Emirats#contactSection">Contacter cette maison</a>
             </div>
           </div>
         </div>
@@ -259,7 +259,7 @@
             <h1>Vous connaissez l'histoire. <br /><em>Goûtez la suite.</em></h1>
           </div>
           <div class="footer-top-link">
-            <a href="">Découvrir la carte</a>
+            <a href="index.html#cartSection">Découvrir la carte</a>
           </div>
         </div>
         <div class="footer-main">
@@ -274,28 +274,28 @@
           <div class="footer-columns">
             <div class="footer-column">
               <h3>La maison</h3>
-              <a href="about.html">À propos</a>
+              <a href="index.html">Accueil</a>
               <a href="index.html#cartSection">Notre carte</a>
               <a href="about.html">À propos de nous</a>
-              <a href="contact.html">Contactez-nous</a>
+              <a href="contact.html#contactSection">Contactez-nous</a>
             </div>
             <div class="footer-column">
               <h3>Nos horizons</h3>
-              <a href="">Casablanca</a>
-              <a href="">Belgique</a>
-              <a href="">France</a>
-              <a href="">Émirats arabes unis</a>
+              <a href="contact.html?city=Casablanca#contactSection">Casablanca</a>
+              <a href="contact.html?city=Belgique#contactSection">Belgique</a>
+              <a href="contact.html?city=France#contactSection">France</a>
+              <a href="contact.html?city=Emirats#contactSection">Émirats arabes unis</a>
             </div>
           </div>
           <div class="footer-column">
             <h3>On se retrouve ?</h3>
             <p>Une question, une grande table ou une occasion à célébrer ?</p>
-            <a href="contact.html" class="footer-contact">Parlons-en</a>
+            <a href="contact.html#contactSection" class="footer-contact">Parlons-en</a>
           </div>
         </div>
         <div class="footer-bottom">
           <p>© 2026 FORNO. La pizza autrement.</p>
-          <p>Conditions et mentions de confidentialité.</p>
+          <p>Site de démonstration.</p>
         </div>
       </div>
     </footer>

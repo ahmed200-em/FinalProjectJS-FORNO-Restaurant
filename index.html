@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,9 +22,9 @@
         </div>
         <nav class="nav">
           <ul class="nav-list">
-            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="index.html" class="active" aria-current="page">Accueil</a></li>
             <li><a href="#cartSection">Notre carte</a></li>
-            <li><a href="about.html">A propos</a></li>
+            <li><a href="about.html">À propos</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
           <div class="panier">
@@ -85,7 +85,7 @@
               Une pate dorree, des ingredients genereux et ce <br />
               petit gout qui donne envie de reprendre une part
             </p>
-            <a href="index.html#cartSection">Je choisis ma pizza</a>
+            <a href="#cartSection">Je choisis ma pizza</a>
             <div class="hero-recipes">
               <span>6</span>
               <p>
@@ -126,12 +126,12 @@
           </div>
         </div>
       </section>
-      <section class="cart-section" id="cartSection">
+      <section class="cart-section" id="cartSection" aria-labelledby="menuTitle">
         <div class="cart-container">
           <div class="cart-text">
             <div class="cart-text-title">
-              <p>A CHACUN SA PART</p>
-              <h1>La cartes des <em>envies.</em></h1>
+              <p>À CHACUN SA PART</p>
+              <h2 id="menuTitle">La carte des <em>envies.</em></h2>
             </div>
             <div class="cart-text-subtitle">
               <p>Les classiques qu'on adore.</p>
@@ -139,85 +139,105 @@
             </div>
           </div>
           <div class="cart-search">
-            <div class="search-bar">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input
-                type="search"
-                placeholder="Quelle pizza vous fait envie?"
-                id="searchInput"
-              />
+            <div class="menu-field">
+              <label for="searchInput">Rechercher une pizza</label>
+              <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input
+                  type="search"
+                  placeholder="Nom ou ingrédient"
+                  id="searchInput"
+                />
+              </div>
             </div>
-            <select name="" id="" class="filter-bar">
-              <option value="">Toutes les pizzas</option>
-              <option value="Classiques">Classiques</option>
-              <option value="Signatures">Signatures</option>
-              <option value="Végétariennes">Végétariennes</option>
-              <option value="Epicee">Epicee</option>
-            </select>
+            <div class="menu-field">
+              <label for="menuCategory">Catégorie</label>
+              <select id="menuCategory" class="filter-bar">
+                <option value="">Toutes les pizzas</option>
+                <option value="classiques">Classiques</option>
+                <option value="signatures">Signatures</option>
+                <option value="vegetariennes">Végétariennes</option>
+                <option value="epicees">Épicées</option>
+              </select>
+            </div>
           </div>
           <div class="filter-result">
-            <p>
-              <span class="filter-result-number">6</span> pizzas a decouvrir
+            <p id="menuResults" role="status" aria-atomic="true">
+              6 pizzas à découvrir
             </p>
+            <button
+              class="filter-reset"
+              id="clearMenuFilters"
+              type="button"
+              hidden
+            >
+              Effacer les filtres
+            </button>
           </div>
           <div class="cards">
-            <div class="card">
+            <div class="card" data-pizza="margherita" data-category="classiques">
               <div class="card-image">
                 <img src="assets/images/margherita.png" alt="" />
-                <span class="image-badge">L'ORIGANLE</span>
+                <span class="image-badge">L'ORIGINALE</span>
                 <span class="image-badge-number">01</span>
               </div>
               <div class="card-text">
                 <p class="card-text-subtitle">CLASSIQUES</p>
-                <h1 class="card-text-title">Margherita</h1>
+                <h3 class="card-text-title">Margherita</h3>
                 <p class="card-ingredients">
                   Sauce tomate, mozzarella & basilic frais.
                 </p>
                 <p>&nbsp;</p>
                 <div class="price">
-                  <p><span>49</span>MAD</p>
-                  <button>+ Ajouter</button>
+                  <p><span>49</span> MAD</p>
+                  <button type="button" aria-label="Ajouter la Margherita au panier">
+                    + Ajouter
+                  </button>
                 </div>
               </div>
             </div>
-            <div class="card">
+            <div class="card" data-pizza="diavola" data-category="epicees">
               <div class="card-image">
                 <img src="assets/images/diavola.png" alt="" />
-                <span class="image-badge">UN PEU DE CARACTERE</span>
+                <span class="image-badge">UN PEU DE CARACTÈRE</span>
                 <span class="image-badge-number">02</span>
               </div>
               <div class="card-text">
-                <p class="card-text-subtitle">EPICEE</p>
-                <h1 class="card-text-title">Diavola</h1>
+                <p class="card-text-subtitle">ÉPICÉE</p>
+                <h3 class="card-text-title">Diavola</h3>
                 <p class="card-ingredients">
-                  Sauce tomate, mozzarella, pepperoni de beouf & piment.
+                  Sauce tomate, mozzarella, pepperoni de bœuf & piment.
                 </p>
                 <div class="price">
-                  <p><span>69</span>MAD</p>
-                  <button>+ Ajouter</button>
+                  <p><span>69</span> MAD</p>
+                  <button type="button" aria-label="Ajouter la Diavola au panier">
+                    + Ajouter
+                  </button>
                 </div>
               </div>
             </div>
-            <div class="card">
+            <div class="card" data-pizza="pollo" data-category="signatures">
               <div class="card-image">
                 <img src="assets/images/pollo.png" alt="" />
-                <span class="image-badge">LA GENEREUSE</span>
+                <span class="image-badge">LA GÉNÉREUSE</span>
                 <span class="image-badge-number">03</span>
               </div>
               <div class="card-text">
                 <p class="card-text-subtitle">SIGNATURES</p>
-                <h1 class="card-text-title">Pollo</h1>
+                <h3 class="card-text-title">Pollo</h3>
                 <p class="card-ingredients">
-                  Creme, poulet rôti, champignons & mozzarella.
+                  Crème, poulet rôti, champignons & mozzarella.
                 </p>
                 <p>&nbsp;</p>
                 <div class="price">
-                  <p><span>79</span>MAD</p>
-                  <button>+ Ajouter</button>
+                  <p><span>79</span> MAD</p>
+                  <button type="button" aria-label="Ajouter la Pollo au panier">
+                    + Ajouter
+                  </button>
                 </div>
               </div>
             </div>
-            <div class="card">
+            <div class="card" data-pizza="giardino" data-category="vegetariennes">
               <div class="card-image">
                 <img src="assets/images/giardino.png" alt="" />
                 <span class="image-badge">TOUT EN COULEURS</span>
@@ -225,37 +245,41 @@
               </div>
               <div class="card-text">
                 <p class="card-text-subtitle">VÉGÉTARIENNES</p>
-                <h1 class="card-text-title">Giardino</h1>
+                <h3 class="card-text-title">Giardino</h3>
                 <p class="card-ingredients">
                   Sauce tomate, poivrons, champignons & olives.
                 </p>
                 <p>&nbsp;</p>
                 <div class="price">
-                  <p><span>65</span>MAD</p>
-                  <button>+ Ajouter</button>
+                  <p><span>65</span> MAD</p>
+                  <button type="button" aria-label="Ajouter la Giardino au panier">
+                    + Ajouter
+                  </button>
                 </div>
               </div>
             </div>
-            <div class="card">
+            <div class="card" data-pizza="tonno" data-category="signatures">
               <div class="card-image">
                 <img src="assets/images/tonno.png" alt="" />
-                <span class="image-badge">L'AIR DE LARGE</span>
+                <span class="image-badge">L'AIR DU LARGE</span>
                 <span class="image-badge-number">05</span>
               </div>
               <div class="card-text">
                 <p class="card-text-subtitle">SIGNATURES</p>
-                <h1 class="card-text-title">Tonno</h1>
+                <h3 class="card-text-title">Tonno</h3>
                 <p class="card-ingredients">
-                  Sauce tomate, thon, oignions rounges & mozzalera.
+                  Sauce tomate, thon, oignons rouges & mozzarella.
                 </p>
                 <p>&nbsp;</p>
                 <div class="price">
-                  <p><span>75</span>MAD</p>
-                  <button>+ Ajouter</button>
+                  <p><span>75</span> MAD</p>
+                  <button type="button" aria-label="Ajouter la Tonno au panier">
+                    + Ajouter
+                  </button>
                 </div>
               </div>
             </div>
-            <div class="card">
+            <div class="card" data-pizza="quattro-formaggi" data-category="classiques">
               <div class="card-image">
                 <img src="assets/images/quattro-formaggi.png" alt="" />
                 <span class="image-badge">POUR LES AMOUREUX</span>
@@ -263,14 +287,19 @@
               </div>
               <div class="card-text">
                 <p class="card-text-subtitle">CLASSIQUES</p>
-                <h1 class="card-text-title">Quattro Formaggi</h1>
+                <h3 class="card-text-title">Quattro Formaggi</h3>
                 <p class="card-ingredients">
-                  Mozzarella, gorgonzola, chevre & parmesan.
+                  Mozzarella, gorgonzola, chèvre & parmesan.
                 </p>
                 <p>&nbsp;</p>
                 <div class="price">
-                  <p><span>85</span>MAD</p>
-                  <button>+ Ajouter</button>
+                  <p><span>85</span> MAD</p>
+                  <button
+                    type="button"
+                    aria-label="Ajouter la Quattro Formaggi au panier"
+                  >
+                    + Ajouter
+                  </button>
                 </div>
               </div>
             </div>
@@ -296,7 +325,7 @@
               Des recettes familieres, quelques nouvelles envies et toujours une
               bonne raison de paratager une part
             </p>
-            <p><a href="">L'histoire de la maison</a></p>
+            <p><a href="about.html#aboutSection">L'histoire de la maison</a></p>
           </div>
         </div>
       </section>
@@ -338,7 +367,7 @@
                 <p>Etaler, garnir, enfourner. Chaque detail compte.</p>
               </div>
             </div>
-            <p><a href="">Rencontrer l'esprit de FORNO</a></p>
+            <p><a href="about.html#chefsSection">Rencontrer l'esprit de FORNO</a></p>
           </div>
         </div>
       </section>
@@ -408,7 +437,7 @@
             </h1>
           </div>
           <div class="footer-top-link">
-            <a href="">On passe à table ?</a>
+            <a href="#cartSection">On passe à table ?</a>
           </div>
         </div>
         <div class="footer-main">
@@ -423,17 +452,17 @@
           <div class="footer-columns">
             <div class="footer-column">
               <h3>La maison</h3>
-              <a href="about.html">À propos</a>
-              <a href="menu.html">Notre carte</a>
-              <a href="about.html#aboutSection">À propos de nous</a>
-              <a href="contact.html">Contactez-nous</a>
+              <a href="index.html">Accueil</a>
+              <a href="#cartSection">Notre carte</a>
+              <a href="about.html">À propos de nous</a>
+              <a href="contact.html#contactSection">Contactez-nous</a>
             </div>
             <div class="footer-column">
               <h3>Nos horizons</h3>
-              <a href="contact.html#contactSection">Casablanca</a>
-              <a href="contact.html#contactSection">Belgique</a>
-              <a href="contact.html#contactSection">France</a>
-              <a href="contact.html#contactSection">Émirats arabes unis</a>
+              <a href="contact.html?city=Casablanca#contactSection">Casablanca</a>
+              <a href="contact.html?city=Belgique#contactSection">Belgique</a>
+              <a href="contact.html?city=France#contactSection">France</a>
+              <a href="contact.html?city=Emirats#contactSection">Émirats arabes unis</a>
             </div>
           </div>
           <div class="footer-column">
@@ -446,7 +475,7 @@
         </div>
         <div class="footer-bottom">
           <p>© 2026 FORNO. La pizza autrement.</p>
-          <p>Conditions et mentions de confidentialité.</p>
+          <p>Site de démonstration.</p>
         </div>
       </div>
     </footer>
@@ -480,5 +509,6 @@
     <script src="js/particles.js" defer></script>
     <script src="js/animations.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/menu.js" defer></script>
   </body>
 </html>

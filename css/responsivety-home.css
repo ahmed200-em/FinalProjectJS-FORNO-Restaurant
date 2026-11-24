@@ -94,14 +94,8 @@
     font-size: 0.7rem;
   }
   .cart-search {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .search-bar {
-    width: 100%;
-  }
-  .filter-bar {
-    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
   }
   .cart-text {
     flex-direction: column;
