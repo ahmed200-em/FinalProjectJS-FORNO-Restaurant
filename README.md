@@ -1,4 +1,4 @@
-# 🍕 FORNO — Pizzeria Artisanale
+<h1 align="center">🍕 FORNO — Pizzeria Artisanale </h1>
 
 > A fully responsive, **dependency-free** showcase website for a fictional artisanal pizzeria, crafted with vanilla **HTML, CSS & JavaScript** — no framework, no build step, no backend.
 
@@ -30,9 +30,9 @@
 | ![About](screenshots/about.webp) | ![Contact](screenshots/contact.webp) |
 
 <p align="center">
-  <img src="screenshots/mobile.webp" alt="FORNO on iPhone 17 Pro Max — web view vs mobile app" width="460" />
-  <br>
   <em><strong>Mobile view</strong></em>
+  <br>
+  <img src="screenshots/mobile.webp" alt="FORNO on iPhone 17 Pro Max — web view vs mobile app" width="460" />
 </p>
 
 ---
