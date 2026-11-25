@@ -30,9 +30,9 @@
 | ![About](screenshots/about.png) | ![Contact](screenshots/contact.png) |
 
 <p align="center">
-  <img src="screenshots/mobile.png" alt="FORNO on mobile" width="320" />
+  <img src="screenshots/mobile.png" alt="FORNO on iPhone 17 Pro Max — web view vs mobile app" width="460" />
   <br />
-  <em>Mobile view — the responsive layout inside a phone frame</em>
+  <em>iPhone 17 Pro Max — left: the responsive web view, right: the "Forno" mobile app (same UI/UX as the site)</em>
 </p>
 
 ---
