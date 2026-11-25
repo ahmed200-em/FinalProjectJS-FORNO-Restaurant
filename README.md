@@ -17,17 +17,23 @@
 
 ---
 
-## 📸 Live Preview
+## 📸 Screenshots
 
-> Previews are rendered to illustrate the interface. For the fully interactive experience (cart, filters, form preview), open the **[Live Demo](https://ahmed200-em.github.io/FinalProjectJS-FORNO-Restaurant/)**.
+> Real screenshots captured from the live site. For the fully interactive experience (cart, filters, contact preview), open the **[Live Demo](https://ahmed200-em.github.io/FinalProjectJS-FORNO-Restaurant/)**.
 
-| Home & Hero | Pizza Menu | Cart Drawer |
-| :---: | :---: | :---: |
-| ![Home](screenshots/home.png) | ![Menu](screenshots/menu.png) | ![Cart](screenshots/cart.png) |
+| Home & Hero | Pizza Menu |
+| :---: | :---: |
+| ![Home](screenshots/home.png) | ![Menu](screenshots/menu.png) |
 
-| About the House | Contact & Locations | Mobile View |
-| :---: | :---: | :---: |
-| ![About](screenshots/about.png) | ![Contact](screenshots/contact.png) | ![Mobile](screenshots/mobile.png) |
+| About the House | Contact & Locations |
+| :---: | :---: |
+| ![About](screenshots/about.png) | ![Contact](screenshots/contact.png) |
+
+<p align="center">
+  <img src="screenshots/mobile.png" alt="FORNO on mobile" width="320" />
+  <br />
+  <em>Mobile view — the responsive layout inside a phone frame</em>
+</p>
 
 ---
 
