@@ -31,8 +31,6 @@
 
 <p align="center">
   <img src="screenshots/mobile.webp" alt="FORNO on iPhone 17 Pro Max — web view vs mobile app" width="460" />
-  <br />
-  <em>iPhone 17 Pro Max — left: the responsive web view, right: the "Forno" mobile app (same UI/UX as the site)</em>
 </p>
 
 ---
